@@ -15,9 +15,14 @@ class Book(models.Model):
     isbn = models.CharField(max_length=13)
     cover_url = models.URLField(blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    price = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True
+    )
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ["-title"]
+
     def __str__(self):
-        return f"{self.title} ({self.isbn})"
+        return f"Title: {self.title} | Author({self.author})"
