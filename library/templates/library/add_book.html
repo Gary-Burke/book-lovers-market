@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+
+<h2>Add Book by ISBN</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form_add | crispy }}
+    <button type="submit">Add Book</button>
+</form>
+
 {% endblock %}
