@@ -33,9 +33,9 @@ def fetch_book_by_isbn(isbn):
 @login_required
 def add_book_by_isbn(request):
     if request.method == "POST":
-        form = ISBNForm(request.POST)
-        if form.is_valid():
-            isbn = form.cleaned_data["isbn"]
+        form_add = ISBNForm(request.POST)
+        if form_add.is_valid():
+            isbn = form_add.cleaned_data["isbn"]
             book_data = fetch_book_by_isbn(isbn)
 
             if book_data:
@@ -47,13 +47,13 @@ def add_book_by_isbn(request):
                 )
                 return redirect("library")
             else:
-                form.add_error("isbn", "Book not found.")
+                form_add.add_error("isbn", "Book not found.")
 
     else:
-        form = ISBNForm()
+        form_add = ISBNForm()
 
     return render(
         request,
         "library/add_book.html",
-        {"form": form}
+        {"form_add": form_add}
     )
