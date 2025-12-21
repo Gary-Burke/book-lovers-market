@@ -15,6 +15,10 @@ def library_books(request):
 
 
 def fetch_book_by_isbn(isbn):
+    """
+    Fetches an object from Google Books API based on the ISBN argument.
+    Returns the book title, author and thumbnail image of given ISBN.
+    """
     url = f"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}"
     response = requests.get(url)
     data = response.json()
@@ -34,6 +38,11 @@ def fetch_book_by_isbn(isbn):
 
 
 def add_book_by_isbn(request):
+    """
+    Displays a form to enter ISBN number
+    Calls fetch_book_by_isbn view and passes user input as ISBN
+    If the ISBN is found, then it will update the Book model
+    """
     if request.method == "POST":
         add_form = ISBNForm(request.POST)
 

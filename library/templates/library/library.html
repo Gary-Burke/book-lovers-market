@@ -2,5 +2,23 @@
 {% load static %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+
 <h2>LIBRARY</h2>
+
+{% else %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-5 offset-md-2">
+            <h2>Login Required</h2>
+            <p class="lead">To access your library please first <a href="{% url 'account_login' %}">Login</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
 {% endblock %}
