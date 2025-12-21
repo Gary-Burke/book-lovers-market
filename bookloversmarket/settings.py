@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -20,6 +21,11 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+MESSAGE_TAGS = {        
+        messages.SUCCESS: 'alert-success',
+        messages.ERROR: 'alert-danger',
+}
 
 
 # Quick-start development settings - unsuitable for production

@@ -41,3 +41,11 @@ nav {
 .active {
     text-decoration: underline;
 }
+
+.alert-success {
+    background-color: rgba(0, 240, 0, 0.35);
+}
+
+.alert-danger {
+    background-color: rgba(240, 0, 0, 0.35);
+}
