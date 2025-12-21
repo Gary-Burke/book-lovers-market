@@ -22,11 +22,13 @@ def fetch_book_by_isbn(isbn):
         return None
 
     volume = data["items"][0]["volumeInfo"]
+    image_links = volume.get("imageLinks", {})
 
     return {
         "title": volume.get("title", "Unknown Title"),
         "author": ", ".join(volume.get("authors", ["Unknown Author"])),
         "isbn": isbn,
+        "cover_url": image_links.get("thumbnail"),
     }
 
 
@@ -44,6 +46,7 @@ def add_book_by_isbn(request):
                     title=book_data["title"],
                     author=book_data["author"],
                     isbn=book_data["isbn"],
+                    cover_url=book_data["cover_url"],
                 )
                 return redirect("library")
             else:
