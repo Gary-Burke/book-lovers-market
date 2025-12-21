@@ -3,13 +3,15 @@ from django.shortcuts import render, redirect
 from .forms import ISBNForm
 from .models import Book
 from django.contrib import messages
-from django.http import HttpResponse
 
 # Create your views here.
 
 
 def library_books(request):
-    return HttpResponse("Hello, World!")
+    return render(
+        request,
+        "library/library.html",
+    )
 
 
 def fetch_book_by_isbn(isbn):
