@@ -1,4 +1,43 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-font: "Roboto", sans-serif;
+    --heading-font: "Lora", serif;
+    --primary-color: #05668D;
+    --secondary-color: #A5BE00;
+    --alt-color: #EBF2FA;
+}
+
+body {
+    font-family: var(--primary-font);
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+}
+
+nav,
+footer {
+    background-color: var(--primary-color);
+}
+
+nav {
+    box-shadow: 0 3px 4px rgb(24, 24, 24);
+}
+
+.nav-item .nav-link {
+    color: var(--alt-color);
+}
 
 .logo {
     height: 40px;
+}
+
+.active {
+    text-decoration: underline;
 }
