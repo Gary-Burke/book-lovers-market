@@ -52,6 +52,7 @@ nav {
 
 .btn-confirm {
     background-color: var(--secondary-color);  
+    border-radius: 0.8rem;
 }
 
 .btn-confirm:hover {
