@@ -1,6 +1,5 @@
 import requests
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from .forms import ISBNForm
 from .models import Book
 from django.http import HttpResponse
@@ -8,7 +7,6 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-@login_required
 def library_books(request):
     return HttpResponse("Hello, World!")
 
@@ -32,7 +30,6 @@ def fetch_book_by_isbn(isbn):
     }
 
 
-@login_required
 def add_book_by_isbn(request):
     if request.method == "POST":
         form_add = ISBNForm(request.POST)
