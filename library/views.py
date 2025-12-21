@@ -2,6 +2,7 @@ import requests
 from django.shortcuts import render, redirect
 from .forms import ISBNForm
 from .models import Book
+from django.contrib import messages
 from django.http import HttpResponse
 
 # Create your views here.
@@ -45,11 +46,17 @@ def add_book_by_isbn(request):
                     isbn=book_data["isbn"],
                     cover_url=book_data["cover_url"],
                 )
-                return redirect("library")
-            else:
-                form_add.add_error("isbn", "Book not found.")
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    "Book successfully added to your Library!"
+                )
 
-    else:
+            else:
+                messages.add_message(
+                    request, messages.ERROR,
+                    "Book not found!"
+                )
+
         form_add = ISBNForm()
 
     return render(
