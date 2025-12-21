@@ -49,3 +49,13 @@ nav {
 .alert-danger {
     background-color: rgba(240, 0, 0, 0.35);
 }
+
+.btn-confirm {
+    background-color: var(--secondary-color);  
+}
+
+.btn-confirm:hover {
+    background-color: white;  
+    border: solid 1px var(--secondary-color);
+    color: var(--secondary-color);
+}
