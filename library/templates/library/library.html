@@ -9,15 +9,13 @@
 
 <div class="container">
     <h3 class="my-2">Welcome to your Library, {{user}}</h3>
+    <a class="btn btn-confirm" href="{% url 'add_book' %}">Add Books</a>
 
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 row-cols-xl-6 g-2 g-lg-4 mt-2">
 
-
         {% for book in book_list %}
         <div class="col">
-
             <div class="card mb-4 ">
-
                 {% if book.cover_url %}
                 <img src="{{ book.cover_url }}" alt="{{ book.title }}">
                 {% else %}
@@ -30,14 +28,12 @@
                         <li class=""> - {{ book.author }}</li>
                         <li class=""> Status: {{ book.get_status_display }}</li>
                     </ul>
-
-
                 </div>
             </div>
         </div>
-
+        {% empty %}
+        <p>You have no books listed</p>
         {% endfor %}
-
     </div>
 </div>
 

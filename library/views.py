@@ -9,8 +9,13 @@ from django.contrib import messages
 
 
 class BookList(generic.ListView):
-    queryset = Book.objects.all().order_by("author")
+    model = Book
     template_name = "library/library.html"
+
+    def get_queryset(self):
+        return Book.objects.filter(
+            user=self.request.user
+        ).order_by("author")
 
 
 def fetch_book_by_isbn(isbn):
