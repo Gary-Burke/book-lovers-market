@@ -1,5 +1,6 @@
 import requests
 from django.shortcuts import render, redirect
+from django.views import generic
 from .forms import ISBNForm
 from .models import Book
 from django.contrib import messages
@@ -7,11 +8,9 @@ from django.contrib import messages
 # Create your views here.
 
 
-def library_books(request):
-    return render(
-        request,
-        "library/library.html",
-    )
+class BookList(generic.ListView):
+    queryset = Book.objects.all().order_by("author")
+    template_name = "library/library.html"
 
 
 def fetch_book_by_isbn(isbn):

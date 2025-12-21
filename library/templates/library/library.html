@@ -5,7 +5,41 @@
 
 {% if user.is_authenticated %}
 
-<h2>LIBRARY</h2>
+
+
+<div class="container">
+    <h3 class="my-2">Welcome to your Library, {{user}}</h3>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 row-cols-xl-6 g-2 g-lg-4 mt-2">
+
+
+        {% for book in book_list %}
+        <div class="col">
+
+            <div class="card mb-4 ">
+
+                {% if book.cover_url %}
+                <img src="{{ book.cover_url }}" alt="{{ book.title }}">
+                {% else %}
+                <img src="{% static 'images/no-cover.png' %}" alt="No cover">
+                {% endif %}
+
+                <div class="card-body">
+                    <ul class="text-left">
+                        <li class="">{{ book.title }}</li>
+                        <li class=""> - {{ book.author }}</li>
+                        <li class=""> Status: {{ book.get_status_display }}</li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
 
 {% else %}
 

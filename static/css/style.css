@@ -51,12 +51,26 @@ nav {
 }
 
 .btn-confirm {
-    background-color: var(--secondary-color);  
+    background-color: var(--secondary-color);
     border-radius: 0.8rem;
 }
 
 .btn-confirm:hover {
-    background-color: white;  
+    background-color: white;
     border: solid 1px var(--secondary-color);
     color: var(--secondary-color);
+}
+
+.card > img {
+    aspect-ratio: 1 / 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.card {
+    min-height: 354px;
 }
