@@ -38,10 +38,6 @@ nav {
     height: 40px;
 }
 
-.active {
-    text-decoration: underline;
-}
-
 .alert-success {
     background-color: rgba(0, 240, 0, 0.35);
 }
