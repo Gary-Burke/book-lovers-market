@@ -1,5 +1,6 @@
 import requests
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from .forms import ISBNForm
 from .models import Book
@@ -8,7 +9,7 @@ from django.contrib import messages
 # Create your views here.
 
 
-class BookList(generic.ListView):
+class BookList(LoginRequiredMixin, generic.ListView):
     model = Book
     template_name = "library/library.html"
 
