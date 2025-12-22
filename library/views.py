@@ -55,17 +55,23 @@ def add_book_by_isbn(request):
             book_data = fetch_book_by_isbn(isbn)
 
             if book_data:
-                Book.objects.create(
-                    user=request.user,
-                    title=book_data["title"],
-                    author=book_data["author"],
-                    isbn=book_data["isbn"],
-                    cover_url=book_data["cover_url"],
-                )
-                messages.add_message(
-                    request, messages.SUCCESS,
-                    "Book successfully added to your Library!"
-                )
+                if Book.objects.filter(user=request.user, isbn=isbn).exists():
+                    messages.add_message(
+                        request, messages.WARNING,
+                        "You have already added this book."
+                    )
+                else:
+                    Book.objects.create(
+                        user=request.user,
+                        title=book_data["title"],
+                        author=book_data["author"],
+                        isbn=book_data["isbn"],
+                        cover_url=book_data["cover_url"],
+                    )
+                    messages.add_message(
+                        request, messages.SUCCESS,
+                        "Book successfully added to your Library!"
+                    )
 
             else:
                 messages.add_message(

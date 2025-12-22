@@ -50,6 +50,10 @@ nav {
     background-color: rgba(240, 0, 0, 0.35);
 }
 
+.alert-warning {
+    background-color: rgba(255, 145, 0, 0.35);
+}
+
 .btn-confirm {
     background-color: var(--secondary-color);
     border-radius: 0.8rem;
