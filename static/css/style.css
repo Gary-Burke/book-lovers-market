@@ -77,7 +77,7 @@ nav {
     color: rgb(220, 0, 0);
 }
 
-.card > img {
+.card>img {
     aspect-ratio: 1 / 1;
 }
 
@@ -89,4 +89,8 @@ ul {
 
 .card {
     min-height: 376px;
+}
+
+.hide {
+    visibility: hidden;
 }
