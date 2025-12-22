@@ -46,9 +46,10 @@ def add_book_by_isbn(request):
     Displays a form to enter ISBN number
     Calls fetch_book_by_isbn view and passes user input as ISBN
     If the ISBN is found, then it will update the Book model
+    Prevents duplicate ISBN to be added to user library
     """
     if request.method == "POST":
-        add_form = ISBNForm(request.POST)
+        add_form = ISBNForm(data=request.POST)
 
         if add_form.is_valid():
             isbn = add_form.cleaned_data["isbn"]
