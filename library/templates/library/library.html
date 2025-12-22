@@ -21,13 +21,16 @@
                 {% else %}
                 <img src="{% static 'images/no-cover.png' %}" alt="No cover">
                 {% endif %}
-
                 <div class="card-body">
                     <ul class="text-left">
                         <li class="">{{ book.title }}</li>
                         <li class=""> - {{ book.author }}</li>
                         <li class=""> Status: {{ book.get_status_display }}</li>
                     </ul>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="col-1 button-edit me-2"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="col-1 button-delete me-1"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </div>
         </div>
