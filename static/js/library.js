@@ -18,4 +18,10 @@ $(document).ready(function () {
         $("#deleteConfirm").attr("href", `delete_book/${bookId}`);
         deleteModal.show();
     });
+
+    $(".button-edit").on("click", function () {
+        let bookId = $(this).attr("book_id");
+        $(".button-edit").attr("href", `edit_book/${bookId}`);
+        $("#editBookForm").attr("action", `edit_book/${bookId}`);
+    });
 });
