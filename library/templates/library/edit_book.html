@@ -14,7 +14,7 @@
                 {% csrf_token %}
                 {{ edit_book_form | crispy }}
                 <a class="btn button-cancel" href="{% url 'library' %}">Cancel</a>
-                <button type="submit" class="btn btn-confirm">Update Details</button>
+                <button type="submit" class="btn btn-confirm ms-1">Update Details</button>
             </form>
         </div>
 
