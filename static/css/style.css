@@ -61,6 +61,18 @@ nav {
     color: var(--secondary-color);
 }
 
+.button-cancel {
+    background-color: grey;
+    border-radius: 0.8rem;
+    color: white;
+}
+
+.button-cancel:hover {
+    background-color: white;
+    border: solid 1px grey;
+    color: black;
+}
+
 .button-edit,
 .button-delete {
     padding: 0px;
