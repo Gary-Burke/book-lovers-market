@@ -93,6 +93,11 @@ nav {
     aspect-ratio: 1 / 1;
 }
 
+.edit-preview>img {
+    width: 60%;
+    
+}
+
 ul {
     list-style-type: none;
     padding: 0px;
