@@ -38,10 +38,6 @@ nav {
     height: 40px;
 }
 
-.active {
-    text-decoration: underline;
-}
-
 .alert-success {
     background-color: rgba(0, 240, 0, 0.35);
 }
@@ -65,8 +61,41 @@ nav {
     color: var(--secondary-color);
 }
 
-.card > img {
+.button-cancel {
+    background-color: grey;
+    border-radius: 0.8rem;
+    color: white;
+}
+
+.button-cancel:hover {
+    background-color: white;
+    border: solid 1px grey;
+    color: black;
+}
+
+.button-edit,
+.button-delete {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: white;
+}
+
+.button-edit {
+    color: var(--primary-color);
+}
+
+.button-delete {
+    color: rgb(220, 0, 0);
+}
+
+.card>img {
     aspect-ratio: 1 / 1;
+}
+
+.edit-preview>img {
+    width: 60%;
+    
 }
 
 ul {
@@ -76,5 +105,9 @@ ul {
 }
 
 .card {
-    min-height: 354px;
+    min-height: 376px;
+}
+
+.hide {
+    visibility: hidden;
 }
