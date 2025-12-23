@@ -107,10 +107,10 @@ def delete_book(request, book_id):
 
 
 def edit_book(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
 
     if request.method == "POST":
 
-        book = get_object_or_404(Book, pk=book_id)
         edit_book_form = EditBookForm(data=request.POST, instance=book)
 
         if edit_book_form.is_valid() and book.user == request.user:
@@ -123,4 +123,14 @@ def edit_book(request, book_id):
                 request, messages.ERROR, "Unable to update book details!"
             )
 
-    return HttpResponseRedirect(reverse("library"))
+    else:
+        edit_book_form = EditBookForm(instance=book)
+
+    return render(
+        request,
+        "library/library.html",
+        {
+            "book": book,
+            "edit_book_form": edit_book_form,
+        }
+    )
