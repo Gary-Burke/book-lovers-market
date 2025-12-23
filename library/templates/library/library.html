@@ -27,8 +27,10 @@
                     </ul>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="col-1 button-edit me-2 hide" book_id="{{ book.id }}"><i class="fa-solid fa-pencil"></i></button>
-                    <a class="col-1 button-delete me-1 hide" book_id="{{ book.id }}" href="#"><i class="fa-solid fa-xmark"></i></a>
+                    <a class="col-1 button-edit me-2 hide" book_id="{{ book.id }}" href="#"><i
+                            class="fa-solid fa-pencil"></i></a>
+                    <a class="col-1 button-delete me-1 hide" book_id="{{ book.id }}" href="#"><i
+                            class="fa-solid fa-xmark"></i></a>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete this book? <br>
+                {{user}}, are you sure you want to delete this book? <br>
                 This action cannot be undone.
             </div>
             <div class="modal-footer">
