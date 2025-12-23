@@ -15,7 +15,7 @@ class ISBNForm(forms.Form):
         return re.sub(r"[-\s]", "", isbn)
 
 
-class EditBookForm(forms.Form):
+class EditBookForm(forms.ModelForm):
     """
     Form class for users to edit their book details
     """
@@ -26,5 +26,5 @@ class EditBookForm(forms.Form):
         """
         model = Book
         fields = (
-            "title", "author", "isbn", "cover_url", "status", "price"
+            "title", "author", "isbn", "cover_url", "status", "price",
         )
