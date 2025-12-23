@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-3">
+
+            <h3>Edit Book Details</h3>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ edit_book_form | crispy }}
+                <a class="btn button-cancel" href="{% url 'library' %}">Cancel</a>
+                <button type="submit" class="btn btn-confirm">Update Details</button>        
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-5 offset-md-2">
+            <h2>Login Required</h2>
+            <p class="lead">To edit your books you need to first <a href="{% url 'account_login' %}">Login</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
