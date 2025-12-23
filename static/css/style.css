@@ -36,12 +36,22 @@ nav {
     box-shadow: 0 3px 4px rgb(24, 24, 24);
 }
 
-.nav-item .nav-link {
+footer {
+    box-shadow: 0 -3px 3px rgb(24, 24, 24);
+}
+
+.nav-item .nav-link,
+footer {
     color: var(--alt-color);
 }
 
 .logo {
     height: 40px;
+}
+
+footer i {
+    color: var(--alt-color);
+    font-size: 1.3rem;
 }
 
 /* Alert messages */
