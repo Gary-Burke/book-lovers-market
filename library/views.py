@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
-from .forms import ISBNForm
+from .forms import ISBNForm, EditBookForm
 from .models import Book
 from django.contrib import messages
 
@@ -103,5 +103,24 @@ def delete_book(request, book_id):
         messages.add_message(
             request, messages.ERROR, "You can only delete your own books!"
         )
-
     return HttpResponseRedirect(reverse('library'))
+
+
+def edit_book(request, book_id):
+
+    if request.method == "POST":
+
+        book = get_object_or_404(Book, pk=book_id)
+        edit_book_form = EditBookForm(data=request.POST, instance=book)
+
+        if edit_book_form.is_valid() and book.user == request.user:
+            book = edit_book_form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Bood details successfully updated!"
+            )
+        else:
+            messages.add_message(
+                request, messages.ERROR, "Unable to update book details!"
+            )
+
+    return HttpResponseRedirect(reverse("library"))
