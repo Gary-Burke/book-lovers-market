@@ -5,8 +5,6 @@
 
 {% if user.is_authenticated %}
 
-
-
 <div class="container">
     <h3 class="my-3">Welcome to your Library, {{user}}</h3>
     <a class="btn btn-confirm" href="{% url 'add_book' %}">Add Books</a>
@@ -29,8 +27,8 @@
                     </ul>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="col-1 button-edit me-2 hide"><i class="fa-solid fa-pencil"></i></button>
-                    <button class="col-1 button-delete me-1 hide"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="col-1 button-edit me-2 hide" book_id="{{ book.id }}"><i class="fa-solid fa-pencil"></i></button>
+                    <a class="col-1 button-delete me-1 hide" book_id="{{ book.id }}" href="#"><i class="fa-solid fa-xmark"></i></a>
                 </div>
             </div>
         </div>

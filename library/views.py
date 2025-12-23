@@ -1,5 +1,6 @@
 import requests
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from .forms import ISBNForm
@@ -88,3 +89,19 @@ def add_book_by_isbn(request):
         "library/add_book.html",
         {"add_form": add_form}
     )
+
+
+def delete_book(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+
+    if book.user == request.user:
+        book.delete()
+        messages.add_message(
+            request, messages.SUCCESS, "Book deleted!"
+        )
+    else:
+        messages.add_message(
+            request, messages.ERROR, "You can only delete your own books!"
+        )
+
+    return HttpResponseRedirect(reverse('library'))
