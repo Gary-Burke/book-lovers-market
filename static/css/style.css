@@ -58,6 +58,16 @@ nav {
     background-color: rgba(207, 120, 6, 0.9);
 }
 
+#messages {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50vw;
+    text-align: center;
+}
+
 /* Buttons */
 
 .btn-confirm {

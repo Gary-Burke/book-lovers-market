@@ -57,7 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == library_url %}active" aria-current="page{% endif %}"
                             href="{% url 'library' %}">Library</a>
-                    </li>        
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
@@ -79,25 +79,24 @@
     </nav>
 
     <!-- Alert Messages -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6 mt-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
+    <div class="" id="messages">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+        {% endfor %}
     </div>
 
+    <!-- Main section -->
     <main>
         {% block content %}
         {% endblock content %}
     </main>
 
-    <footer></footer>
+    <!-- Footer Section -->
+    <footer>
+    </footer>
 
     <!-- jQuery CDN link -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
