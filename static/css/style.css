@@ -21,6 +21,12 @@ h3 {
     font-family: var(--heading-font);
 }
 
+.hide {
+    visibility: hidden;
+}
+
+/* Nav and Footer */
+
 nav,
 footer {
     background-color: var(--primary-color);
@@ -38,17 +44,21 @@ nav {
     height: 40px;
 }
 
+/* Alert messages */
+
 .alert-success {
-    background-color: rgba(0, 240, 0, 0.35);
+    background-color: rgba(14, 211, 14, 0.9);
 }
 
 .alert-danger {
-    background-color: rgba(240, 0, 0, 0.35);
+    background-color: rgba(204, 11, 11, 0.9);
 }
 
 .alert-warning {
-    background-color: rgba(255, 145, 0, 0.35);
+    background-color: rgba(207, 120, 6, 0.9);
 }
+
+/* Buttons */
 
 .btn-confirm {
     background-color: var(--secondary-color);
@@ -73,6 +83,7 @@ nav {
     color: black;
 }
 
+/* Icons for edit and delete */
 .button-edit,
 .button-delete {
     padding: 0px;
@@ -89,15 +100,16 @@ nav {
     color: rgb(220, 0, 0);
 }
 
+/* Images */
 .card>img {
     aspect-ratio: 1 / 1;
 }
 
 .edit-preview>img {
     width: 60%;
-    
 }
 
+/* Card views on library page */
 ul {
     list-style-type: none;
     padding: 0px;
@@ -106,8 +118,4 @@ ul {
 
 .card {
     min-height: 376px;
-}
-
-.hide {
-    visibility: hidden;
 }
