@@ -116,12 +116,14 @@ def edit_book(request, book_id):
         if edit_book_form.is_valid() and book.user == request.user:
             book = edit_book_form.save()
             messages.add_message(
-                request, messages.SUCCESS, "Bood details successfully updated!"
+                request, messages.SUCCESS, "Book details successfully updated!"
             )
         else:
             messages.add_message(
                 request, messages.ERROR, "Unable to update book details!"
             )
+
+        return HttpResponseRedirect(reverse('library'))
 
     else:
         edit_book_form = EditBookForm(instance=book)
