@@ -128,7 +128,7 @@ def edit_book(request, book_id):
 
     return render(
         request,
-        "library/library.html",
+        "library/edit_book.html",
         {
             "book": book,
             "edit_book_form": edit_book_form,
