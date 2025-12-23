@@ -21,6 +21,11 @@ h3 {
     font-family: var(--heading-font);
 }
 
+/* prevent navbar overlap due to fixed position */
+.section {
+    padding-top: 4rem; 
+}
+
 .hide {
     visibility: hidden;
 }
@@ -46,7 +51,7 @@ footer {
 }
 
 .logo {
-    height: 40px;
+    height: 2rem;
 }
 
 footer i {
