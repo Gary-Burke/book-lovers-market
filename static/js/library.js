@@ -19,12 +19,20 @@ $(document).ready(function () {
         deleteModal.show();
     });
 
+    /**
+     * When clicked, gets book ID from edit button attribute
+     * Builds dynamic href/URL for selected book
+     * builds url for action attribute of post form
+     */
     $(".button-edit").on("click", function () {
         let bookId = $(this).attr("book_id");
         $(".button-edit").attr("href", `edit_book/${bookId}`);
         $("#editBookForm").attr("action", `edit_book/${bookId}`);
     });
 
+    /**
+     * Toggles dropdown menu when filter icon is clicked
+     */
     $("#library-filter").on("click", function () {
         $(this).siblings("form").toggleClass("hide");
     });
