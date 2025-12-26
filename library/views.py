@@ -3,9 +3,10 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
+from django.contrib import messages
+from django.db.models import Q
 from .forms import ISBNForm, EditBookForm
 from .models import Book
-from django.contrib import messages
 
 # Create your views here.
 
@@ -16,6 +17,15 @@ class BookList(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         queryset = Book.objects.filter(user=self.request.user)
+
+        # Filter by search
+        search = self.request.GET.get("search")
+        if search:
+            queryset = queryset.filter(
+                Q(title__icontains=search) |
+                Q(author__icontains=search) |
+                Q(isbn__icontains=search)
+            )
 
         # Filter by status
         status = self.request.GET.get("status")
