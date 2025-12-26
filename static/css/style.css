@@ -25,7 +25,7 @@ h3 {
 
 /* prevent navbar overlap due to fixed position */
 .section {
-    padding-top: 4rem; 
+    padding-top: 4rem;
 }
 
 .hide {
@@ -152,4 +152,17 @@ footer i {
 #library-sort {
     color: var(--primary-color);
     cursor: pointer;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    background-image: url("../images/icon-search.png");
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    padding: 3px 20px 3px 40px;
 }

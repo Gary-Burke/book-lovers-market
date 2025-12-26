@@ -12,8 +12,9 @@
     <div class="d-flex justify-content-between align-content-center">
         <a class="btn btn-confirm mb-4 me-auto" href="{% url 'add_book' %}">Add Books</a>
 
+        <!-- Search field -->
         <form method="get" class="mb-3 me-2" id="form-search">
-            <input id="search-input" name="search" type="text" placeholder="Search by title, author, or ISBN" size="30" value="{{ request.GET.search }}"  autocomplete="off">
+            <input id="search-input" name="search" type="text" placeholder="by title, author or ISBN"  value="{{ request.GET.search }}"  autocomplete="off">
 
             {% if request.GET.status %}
             <input type="hidden" name="status" value="{{ request.GET.status }}">
