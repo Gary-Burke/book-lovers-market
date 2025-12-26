@@ -24,4 +24,9 @@ $(document).ready(function () {
         $(".button-edit").attr("href", `edit_book/${bookId}`);
         $("#editBookForm").attr("action", `edit_book/${bookId}`);
     });
+
+    $("#library-filter").on("click", function () {
+        $(this).siblings("form").toggleClass("hide");
+    });
+
 });

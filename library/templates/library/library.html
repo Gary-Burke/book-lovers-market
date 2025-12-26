@@ -10,9 +10,10 @@
     <h3 class="my-3">Welcome to your Library, {{user}}</h3>
 
     <div class="d-flex justify-content-between">
-        <a class="btn btn-confirm mb-4" href="{% url 'add_book' %}">Add Books</a>
-        <form method="get" class="mb-3 lg-me-5">
-            <i class="fa-solid fa-filter me-1"></i>
+        <a class="btn btn-confirm mb-4 me-auto" href="{% url 'add_book' %}">Add Books</a>
+        <i class="fa-solid fa-filter me-2" id="library-filter"></i>
+        <form method="get" class="mb-3 lg-me-5 hide">
+            
             <select name="status" onchange="this.form.submit()">
                 <option value="">All books</option>
 

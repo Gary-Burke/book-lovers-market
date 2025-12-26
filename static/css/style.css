@@ -148,6 +148,6 @@ footer i {
     aspect-ratio: 1 / 1.25;
 }
 
-.library form i {
+.library i {
     color: var(--primary-color);
 }
