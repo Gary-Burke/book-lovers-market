@@ -34,7 +34,14 @@ $(document).ready(function () {
      * Toggles dropdown menu when filter icon is clicked
      */
     $("#library-filter").on("click", function () {
-        $(this).siblings("form").toggleClass("hide");
+        $("#form-filter").toggleClass("hide");
+    });
+
+    /**
+     * Toggles dropdown menu when sort by icon is clicked
+     */
+    $("#library-sort").on("click", function () {
+        $("#form-sort").toggleClass("hide");
     });
 
 });
