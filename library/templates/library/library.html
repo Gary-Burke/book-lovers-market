@@ -11,12 +11,24 @@
 
     <div class="d-flex justify-content-between">
         <a class="btn btn-confirm mb-4 me-auto" href="{% url 'add_book' %}">Add Books</a>
+        
+        <form method="get" class="mb-3 lg-me-5 me-2 hide" id="form-sort">
+            <select name="sort" onchange="this.form.submit()">
+                <option value="author">Author Up</option>
+                <option value="-author">Author Down</option>
+                <option value="title">Title Up</option>
+                <option value="-title">Title Down</option>
+                <option value="status">Status Up</option>
+                <option value="-status">Status Down</option>    
+            </select>
+        </form>
+        <i class="fa-solid fa-arrow-down-short-wide me-2" id="library-sort"></i>
+
+        <!-- filter icon and menu -->
         <i class="fa-solid fa-filter me-2" id="library-filter"></i>
-        <form method="get" class="mb-3 lg-me-5 hide">
-            
+        <form method="get" class="mb-3 lg-me-5 hide" id="form-filter">
             <select name="status" onchange="this.form.submit()">
                 <option value="">All books</option>
-
                 {% for value, label in STATUS %}
                 <option value="{{ value }}" {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
                     {{ label }}
