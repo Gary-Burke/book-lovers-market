@@ -10,25 +10,23 @@
     <h3 class="my-3">Welcome to your Library, {{user}}</h3>
 
     <div class="d-flex justify-content-between">
-    <a class="btn btn-confirm mb-4" href="{% url 'add_book' %}">Add Books</a>
-    <form method="get" class="mb-3 lg-me-5">
-        <i class="fa-solid fa-filter me-1"></i>
-        <select name="status" onchange="this.form.submit()">
-            <option value="">All books</option>
+        <a class="btn btn-confirm mb-4" href="{% url 'add_book' %}">Add Books</a>
+        <form method="get" class="mb-3 lg-me-5">
+            <i class="fa-solid fa-filter me-1"></i>
+            <select name="status" onchange="this.form.submit()">
+                <option value="">All books</option>
 
-            {% for value, label in STATUS %}
-            <option value="{{ value }}" {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
-                {{ label }}
-            </option>
-            {% endfor %}
-        </select>
-    </form>
+                {% for value, label in STATUS %}
+                <option value="{{ value }}" {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
+                    {{ label }}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
     </div>
 
     <div class="row g-3">
-
         {% for book in book_list %}
-
         <div class="book col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="row">
                 <div class="col-4">
@@ -38,9 +36,7 @@
                     <img src="{% static 'images/no-cover.png' %}" alt="No cover">
                     {% endif %}
                 </div>
-
                 <div class="col-8 ps-0">
-
                     <ul class="book-text">
                         <li>{{ book.title }}</li>
                         <li> - {{ book.author }}</li>
@@ -52,7 +48,6 @@
                         <a class="col-1 button-delete me-1 hide" book_id="{{ book.id }}" href="#"><i
                                 class="fa-solid fa-xmark"></i></a>
                     </div>
-
                 </div>
             </div>
         </div>
