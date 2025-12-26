@@ -10,6 +10,8 @@
     --alt-color: #EBF2FA;
 }
 
+/* General Styles */
+
 body {
     font-family: var(--primary-font);
 }
@@ -108,6 +110,14 @@ footer i {
     color: black;
 }
 
+.button-edit {
+    color: var(--primary-color);
+}
+
+.button-delete {
+    color: rgb(220, 0, 0);
+}
+
 /* Icons for edit and delete */
 .button-edit,
 .button-delete {
@@ -117,19 +127,12 @@ footer i {
     background-color: white;
 }
 
-.button-edit {
-    color: var(--primary-color);
-}
-
-.button-delete {
-    color: rgb(220, 0, 0);
-}
-
+/* Edit Book Page */
 .edit-preview>img {
     width: 60%;
 }
 
-/* Card views on library page */
+/* Book views on library page */
 .book ul {
     list-style-type: none;
     padding: 0px;
