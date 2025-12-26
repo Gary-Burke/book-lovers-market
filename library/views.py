@@ -17,15 +17,29 @@ class BookList(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         queryset = Book.objects.filter(user=self.request.user)
 
+        # Filter by status
         status = self.request.GET.get("status")
-        if status != "" and status is not None:
+        if status:
             queryset = queryset.filter(status=status)
 
-        return queryset.order_by("author")
+        # Handle sorting
+        sort = self.request.GET.get("sort", "author")  # default sort
+
+        allowed_sorts = [
+            "author", "-author",
+            "title", "-title",
+            "status", "-status",
+        ]
+
+        if sort not in allowed_sorts:
+            sort = "author"
+
+        return queryset.order_by(sort)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["STATUS"] = Book.STATUS
+        context["current_sort"] = self.request.GET.get("sort", "author")
         return context
 
 
