@@ -10,6 +10,8 @@
     --alt-color: #EBF2FA;
 }
 
+/* General Styles */
+
 body {
     font-family: var(--primary-font);
 }
@@ -21,6 +23,17 @@ h3 {
     font-family: var(--heading-font);
 }
 
+/* prevent navbar overlap due to fixed position */
+.section {
+    padding-top: 4rem; 
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* Nav and Footer */
+
 nav,
 footer {
     background-color: var(--primary-color);
@@ -30,25 +43,49 @@ nav {
     box-shadow: 0 3px 4px rgb(24, 24, 24);
 }
 
-.nav-item .nav-link {
+footer {
+    box-shadow: 0 -3px 3px rgb(24, 24, 24);
+}
+
+.nav-item .nav-link,
+footer {
     color: var(--alt-color);
 }
 
 .logo {
-    height: 40px;
+    height: 2rem;
 }
 
+footer i {
+    color: var(--alt-color);
+    font-size: 1.3rem;
+}
+
+/* Alert messages */
+
 .alert-success {
-    background-color: rgba(0, 240, 0, 0.35);
+    background-color: rgba(14, 211, 14, 0.9);
 }
 
 .alert-danger {
-    background-color: rgba(240, 0, 0, 0.35);
+    background-color: rgba(204, 11, 11, 0.9);
 }
 
 .alert-warning {
-    background-color: rgba(255, 145, 0, 0.35);
+    background-color: rgba(207, 120, 6, 0.9);
 }
+
+#messages {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50vw;
+    text-align: center;
+}
+
+/* Buttons */
 
 .btn-confirm {
     background-color: var(--secondary-color);
@@ -73,14 +110,6 @@ nav {
     color: black;
 }
 
-.button-edit,
-.button-delete {
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    background-color: white;
-}
-
 .button-edit {
     color: var(--primary-color);
 }
@@ -89,25 +118,38 @@ nav {
     color: rgb(220, 0, 0);
 }
 
-.card>img {
-    aspect-ratio: 1 / 1;
+/* Icons for edit and delete */
+.button-edit,
+.button-delete {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: white;
 }
 
+/* Edit Book Page */
 .edit-preview>img {
     width: 60%;
-    
 }
 
-ul {
+/* Book views on library page */
+.book ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
 
-.card {
-    min-height: 376px;
+.book-text {
+    font-size: 0.9rem;
 }
 
-.hide {
-    visibility: hidden;
+.book img {
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+}
+
+#library-filter,
+#library-sort {
+    color: var(--primary-color);
+    cursor: pointer;
 }
