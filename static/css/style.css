@@ -148,6 +148,7 @@ footer i {
     aspect-ratio: 1 / 1.25;
 }
 
-.library i {
+#library-filter {
     color: var(--primary-color);
+    cursor: pointer;
 }
