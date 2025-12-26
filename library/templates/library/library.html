@@ -16,11 +16,11 @@
         <form method="get" class="mb-3 lg-me-5 me-2 hide" id="form-sort">
             <select name="sort" onchange="this.form.submit()">
                 <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
-                <option value="-author" {% if current_sort == "author" %}selected{% endif %}>Author Down</option>
-                <option value="title" {% if current_sort == "author" %}selected{% endif %}>Title Up</option>
-                <option value="-title" {% if current_sort == "author" %}selected{% endif %}>Title Down</option>
-                <option value="status" {% if current_sort == "author" %}selected{% endif %}>Status Up</option>
-                <option value="-status" {% if current_sort == "author" %}selected{% endif %}>Status Down</option>
+                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
+                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
+                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
+                <option value="status" {% if current_sort == "status" %}selected{% endif %}>Status Up</option>
+                <option value="-status" {% if current_sort == "-status" %}selected{% endif %}>Status Down</option>
             </select>
         </form>
         <i class="fa-solid fa-arrow-down-short-wide me-2" id="library-sort"></i>
