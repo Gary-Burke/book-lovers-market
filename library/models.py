@@ -1,12 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-STATUS = ((0, "Owned"), (1, "For Sale"), (2, "Sold"))
-
 # Create your models here.
 
 
 class Book(models.Model):
+    STATUS = (
+        (0, "Owned"),
+        (1, "For Sale"),
+        (2, "Sold"),
+    )
+
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="books"
     )
