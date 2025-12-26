@@ -15,9 +15,18 @@ class BookList(LoginRequiredMixin, generic.ListView):
     template_name = "library/library.html"
 
     def get_queryset(self):
-        return Book.objects.filter(
-            user=self.request.user
-        ).order_by("author")
+        queryset = Book.objects.filter(user=self.request.user)
+
+        status = self.request.GET.get("status")
+        if status != "" and status is not None:
+            queryset = queryset.filter(status=status)
+
+        return queryset.order_by("author")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["STATUS"] = Book.STATUS
+        return context
 
 
 def fetch_book_by_isbn(isbn):
