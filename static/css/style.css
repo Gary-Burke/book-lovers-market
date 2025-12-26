@@ -125,22 +125,22 @@ footer i {
     color: rgb(220, 0, 0);
 }
 
-/* Images */
-.card>img {
-    aspect-ratio: 1 / 1;
-}
-
 .edit-preview>img {
     width: 60%;
 }
 
 /* Card views on library page */
-ul {
+.book ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
 
-.card {
-    min-height: 376px;
+.book-text {
+    font-size: 0.9rem;
+}
+
+.book img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
