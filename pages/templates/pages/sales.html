@@ -7,7 +7,6 @@
     <h3 class="my-3">Welcome to the Book Lover's Market!</h3>
 
     <div class="d-flex">
-
         <!-- Search field -->
         <form method="get" class="" id="form-search">
             <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
@@ -23,7 +22,19 @@
         </form>
     </div>
 
-</div>
+    <!-- Sort icon and dropdown menus -->
+    <div class="d-flex align-items-center my-3">
+        <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
+        <form method="get" class="ms-1" id="form-sort">
+            <select name="sort" onchange="this.form.submit()">
+                <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
+                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
+                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
+                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
+                <option value="status" {% if current_sort == "price" %}selected{% endif %}>Price Up</option>
+                <option value="-status" {% if current_sort == "-price" %}selected{% endif %}>Price Down</option>
+            </select>
+        </form>
+    </div>
 
-
-{% endblock content %}
+    {% endblock content %}
