@@ -33,7 +33,7 @@ class BookList(LoginRequiredMixin, generic.ListView):
             queryset = queryset.filter(status=status)
 
         # Handle sorting
-        sort = self.request.GET.get("sort", "author")  # default sort
+        sort = self.request.GET.get("sort", "author")
 
         allowed_sorts = [
             "author", "-author",
