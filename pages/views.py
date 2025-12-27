@@ -15,10 +15,3 @@ def home_page(request):
         request,
         'pages/home.html'
     )
-
-
-def sales_page(request):
-    return render(
-        request,
-        'pages/sales.html'
-    )

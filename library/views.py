@@ -169,3 +169,10 @@ def edit_book(request, book_id):
             "edit_book_form": edit_book_form,
         }
     )
+
+
+def sales_page(request):
+    return render(
+        request,
+        'library/sales.html'
+    )
