@@ -154,6 +154,8 @@ footer i {
     color: var(--primary-color);
 }
 
+/* Search, Filter and Sort fields */
+
 #search-input {
     width: 100%;
     box-sizing: border-box;
