@@ -9,12 +9,15 @@
 <div class="container library">
     <h3 class="my-3">Welcome to your Library, {{user}}</h3>
 
-    <div class="d-flex justify-content-between align-content-center">
-        <a class="btn btn-confirm mb-4 me-auto" href="{% url 'add_book' %}">Add Books</a>
+    <div class="d-flex align-items-center justify-content-between ">
+
+        <!-- Add Books button -->
+        <a class="btn btn-confirm px-2 " href="{% url 'add_book' %}"><i class="fa-solid fa-plus"></i> Books</a>
 
         <!-- Search field -->
-        <form method="get" class="mb-3 me-2" id="form-search">
-            <input id="search-input" name="search" type="text" placeholder="by title, author or ISBN"  value="{{ request.GET.search }}"  autocomplete="off">
+        <form method="get" class="" id="form-search">
+            <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
+                value="{{ request.GET.search }}" autocomplete="off">
 
             {% if request.GET.status %}
             <input type="hidden" name="status" value="{{ request.GET.status }}">
@@ -24,35 +27,39 @@
             <input type="hidden" name="sort" value="{{ request.GET.sort }}">
             {% endif %}
         </form>
-
-        <!-- sort by icon and menu -->
-        <form method="get" class="mb-3 lg-me-5 me-2 hide" id="form-sort">
-            <select name="sort" onchange="this.form.submit()">
-                <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
-                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
-                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
-                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
-                <option value="status" {% if current_sort == "status" %}selected{% endif %}>Status Up</option>
-                <option value="-status" {% if current_sort == "-status" %}selected{% endif %}>Status Down</option>
-            </select>
-        </form>
-        <i class="fa-solid fa-arrow-down-short-wide me-2" id="library-sort"></i>
-
-        <!-- filter icon and menu -->
-        <i class="fa-solid fa-filter me-2" id="library-filter"></i>
-        <form method="get" class="mb-3 lg-me-5 hide" id="form-filter">
-            <select name="status" onchange="this.form.submit()">
-                <option value="">All books</option>
-                {% for value, label in STATUS %}
-                <option value="{{ value }}" {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
-                    {{ label }}
-                </option>
-                {% endfor %}
-            </select>
-        </form>
     </div>
 
-    <div class="row g-3">
+    <!-- Sort and filter icons and dropdown menus -->
+    <div class="d-flex align-items-center my-3">
+        
+            <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
+            <form method="get" class="ms-1" id="form-sort">
+                <select name="sort" onchange="this.form.submit()">
+                    <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
+                    <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
+                    <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
+                    <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
+                    <option value="status" {% if current_sort == "status" %}selected{% endif %}>Status Up</option>
+                    <option value="-status" {% if current_sort == "-status" %}selected{% endif %}>Status Down</option>
+                </select>
+            </form>
+        
+            <i class="fa-solid fa-filter ms-3" id="library-filter"></i>
+            <form method="get" class="ms-1" id="form-filter">
+                <select name="status" onchange="this.form.submit()">
+                    <option value="">All books</option>
+                    {% for value, label in STATUS %}
+                    <option value="{{ value }}"
+                        {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </form>
+    </div>
+
+    <!-- Books -->
+    <div class="row g-3 mt-1">
         {% for book in book_list %}
         <div class="book col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="row">
