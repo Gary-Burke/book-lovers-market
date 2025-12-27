@@ -4,6 +4,7 @@
 {% url 'add_book' as add_book_url %}
 {% url 'about' as about_url %}
 {% url 'home' as home_url %}
+{% url 'sales' as sales_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -58,6 +59,11 @@
                         <a class="nav-link {% if request.path == library_url %}active" aria-current="page{% endif %}"
                             href="{% url 'library' %}">Library</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == sales_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'sales' %}">Sales</a>
+                    </li>
+
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
