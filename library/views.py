@@ -171,8 +171,7 @@ def edit_book(request, book_id):
     )
 
 
-def sales_page(request):
-    return render(
-        request,
-        'library/sales.html'
-    )
+class SalesList(generic.ListView):
+    queryset = Book.objects.filter(status=1)
+    template_name = "library/sales.html"
+    context_object_name = "sales_list"
