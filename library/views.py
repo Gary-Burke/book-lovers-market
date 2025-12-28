@@ -188,4 +188,21 @@ class SalesList(generic.ListView):
                 Q(isbn__icontains=search)
             )
 
-        return queryset.order_by("title")
+        # Handle sorting
+        sort = self.request.GET.get("sort")
+
+        allowed_sorts = [
+            "author", "-author",
+            "title", "-title",
+            "price", "-price",
+        ]
+
+        if sort not in allowed_sorts:
+            sort = "author"
+
+        return queryset.order_by(sort)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["current_sort"] = self.request.GET.get("sort", "author")
+        return context
