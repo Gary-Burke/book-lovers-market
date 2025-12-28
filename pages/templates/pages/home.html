@@ -7,14 +7,34 @@
     <h1 class="my-3 text-center col">Welcome to Book Lover's Market!</h1>
 
     <div class="col col-md-10 col-lg-6 mx-auto">
-        <img src="{{ home.image.url }}" alt="" id="home-hero">
+        {% if "placeholder" in home.image.url %}
+        <img src="{% static 'images/placeholder-home.webp' %}" alt="placeholder hero image" id="home-hero">
+        {% else %}
+        <img src="{{ home.image.url }}" alt="hero image" id="home-hero">
+        {% endif %}
     </div>
 
-    <p class="col col-lg-8 mx-auto my-4 lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus eum repellendus ab illo incidunt doloribus
-        magni assumenda ad dolorum accusantium labore iure nesciunt id et, eius voluptates voluptas quibusdam quam?</p>
+    <div class="col col-lg-8 mx-auto mt-4 mb-5 lead">
+        <p>
+            If you love books then you have come to the right place. Whether you like to collect books and build your
+            own
+            personal library or whether you prefer to sell them to other book enthusiasts, Book Lover's Market is your
+            new happy place.
+        </p>
+        <p>
+            Here you can create your own personal digital library so that you can admire your collection on demand. 
+            When some of your books need new homes, then you can list them here for others to find, buy and cherish.
+            As your need to expand your library increases, you can also search and find books that fellow Book Lovers are selling.
+            Your happiness is the number one priority and books are the key that unlocks that happiness.
+        </p>
+        <p>
+            Delay no longer! Create an account now and start to build your library today. See how your happiness grows
+            as your book collection grows.
+        </p>
+    </div>
 
     <div class="col col-lg-8 mx-auto my-4">
-        <h3 class="text-center">Quote of the Month</h3>
+        <h3 class="text-center mb-3">Quote of the Month</h3>
         <p class="lead">{{ home.quote }}</p>
         <p class="text-end">- {{ home.author }}</p>
     </div>
