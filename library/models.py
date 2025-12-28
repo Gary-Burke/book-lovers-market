@@ -15,7 +15,6 @@ class Book(models.Model):
         User, on_delete=models.CASCADE, related_name="books"
     )
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255)
     author = models.CharField(max_length=255)
     isbn = models.CharField(max_length=30)
     cover_url = models.URLField(blank=True, null=True)
