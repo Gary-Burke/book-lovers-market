@@ -42,12 +42,12 @@
         <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
         <form method="get" class="ms-1" id="form-sort">
             <select name="sort" onchange="this.form.submit()">
-                <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
-                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
-                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
-                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
-                <option value="status" {% if current_sort == "status" %}selected{% endif %}>Status Up</option>
-                <option value="-status" {% if current_sort == "-status" %}selected{% endif %}>Status Down</option>
+                <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author a-z</option>
+                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author z-a</option>
+                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title a-z</option>
+                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title z-a</option>
+                <option value="status" {% if current_sort == "status" %}selected{% endif %}>Status a-z</option>
+                <option value="-status" {% if current_sort == "-status" %}selected{% endif %}>Status z-a</option>
             </select>
 
             {% if request.GET.status %}
