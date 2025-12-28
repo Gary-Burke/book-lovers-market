@@ -30,6 +30,9 @@
                 <option value="price" {% if current_sort == "price" %}selected{% endif %}>Price Up</option>
                 <option value="-price" {% if current_sort == "-price" %}selected{% endif %}>Price Down</option>
             </select>
+            {% if request.GET.search %}
+            <input type="hidden" name="search" value="{{ request.GET.search }}">
+            {% endif %}
         </form>
     </div>
 
