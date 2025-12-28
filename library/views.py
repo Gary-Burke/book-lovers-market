@@ -172,6 +172,20 @@ def edit_book(request, book_id):
 
 
 class SalesList(generic.ListView):
-    queryset = Book.objects.filter(status=1)
+    model = Book
     template_name = "library/sales.html"
     context_object_name = "sales_list"
+
+    def get_queryset(self):
+        queryset = Book.objects.filter(status=1)
+
+        # Filter by search
+        search = self.request.GET.get("search")
+        if search:
+            queryset = queryset.filter(
+                Q(title__icontains=search) |
+                Q(author__icontains=search) |
+                Q(isbn__icontains=search)
+            )
+
+        return queryset.order_by("title")
