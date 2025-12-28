@@ -11,4 +11,4 @@ class Home(models.Model):
     created_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.author | self.quote
+        return f"{self.author} | {self.quote}"
