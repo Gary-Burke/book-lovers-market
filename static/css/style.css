@@ -174,3 +174,8 @@ footer i {
     border: 2px solid #ccc;
     border-radius: 4px;
 }
+
+/* Home Page */
+#home-hero {
+    width: 100%;
+}
