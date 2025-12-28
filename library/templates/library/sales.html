@@ -6,34 +6,37 @@
 <div class="container sales">
     <h3 class="my-3">Welcome to the Book Lover's Market!</h3>
 
-    <div class="d-flex">
+    <div class="row row-cols-1 row-cols-md-2 gy-2 align-items-center justify-content-between">
+
+        <!-- Sort icon and dropdown menus -->
+        <div class="col col-sm-4 d-flex align-items-center">
+            <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
+            <form method="get" class="ms-1" id="form-sort">
+                <select name="sort" onchange="this.form.submit()">
+                    <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
+                    <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
+                    <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
+                    <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
+                    <option value="price" {% if current_sort == "price" %}selected{% endif %}>Price Up</option>
+                    <option value="-price" {% if current_sort == "-price" %}selected{% endif %}>Price Down</option>
+                </select>
+                {% if request.GET.search %}
+                <input type="hidden" name="search" value="{{ request.GET.search }}">
+                {% endif %}
+            </form>
+        </div>
+
         <!-- Search field -->
-        <form method="get" class="" id="form-search">
-            <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
-                value="{{ request.GET.search }}" autocomplete="off" class="ps-4 pe-5">            
+        <div class="col col-sm-8 col-lg-5 col-xl-4 text-end">
+            <form method="get" class="" id="form-search">
+                <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
+                    value="{{ request.GET.search }}" autocomplete="off" class="ps-4 pe-5">
 
-            {% if request.GET.sort %}
-            <input type="hidden" name="sort" value="{{ request.GET.sort }}">
-            {% endif %}
-        </form>
-    </div>
-
-    <!-- Sort icon and dropdown menus -->
-    <div class="d-flex align-items-center my-3">
-        <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
-        <form method="get" class="ms-1" id="form-sort">
-            <select name="sort" onchange="this.form.submit()">
-                <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author Up</option>
-                <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author Down</option>
-                <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title Up</option>
-                <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title Down</option>
-                <option value="price" {% if current_sort == "price" %}selected{% endif %}>Price Up</option>
-                <option value="-price" {% if current_sort == "-price" %}selected{% endif %}>Price Down</option>
-            </select>
-            {% if request.GET.search %}
-            <input type="hidden" name="search" value="{{ request.GET.search }}">
-            {% endif %}
-        </form>
+                {% if request.GET.sort %}
+                <input type="hidden" name="sort" value="{{ request.GET.sort }}">
+                {% endif %}
+            </form>
+        </div>
     </div>
 
     <!-- Books -->
