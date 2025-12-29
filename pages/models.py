@@ -24,7 +24,7 @@ class Feedback(models.Model):
     """
     name = models.CharField(max_length=255)
     email = models.EmailField()
-    body = models.TextField()
+    feedback = models.TextField()
     read = models.BooleanField(default=False)
 
     def __str__(self):

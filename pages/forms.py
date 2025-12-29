@@ -13,5 +13,5 @@ class FeedbackForm(forms.ModelForm):
         """
         model = Feedback
         fields = (
-            "name", "email", "body"
+            "name", "email", "feedback"
         )
