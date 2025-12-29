@@ -5,6 +5,10 @@ from cloudinary.models import CloudinaryField
 
 
 class Home(models.Model):
+    """
+    Stores a single instance for the home page such as the hero image,
+    book quote and author
+    """
     image = CloudinaryField('image', default='placeholder')
     quote = models.TextField()
     author = models.CharField(max_length=255)
@@ -12,3 +16,16 @@ class Home(models.Model):
 
     def __str__(self):
         return f"{self.author} | {self.quote}"
+
+
+class Feedback(models.Model):
+    """
+    Stores a single feedback message from a user
+    """
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    body = models.TextField()
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Feedback from {self.name}"
