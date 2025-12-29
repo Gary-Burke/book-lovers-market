@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -29,7 +30,15 @@
             sell books from fellow Book Lovers on our platform.
             We aim to spread the happiness brought to us by books and by books we shall prosper!
         </p>
+    </div>
 
+    <div class="col col-md-8 col-xl-6 mx-auto">
+        <h3 class="text-center mb-3">We want to hear from you!</h3>
+        <form method="POST">
+            {{ feedback_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-confirm">Send Feedback</button>
+        </form>
     </div>
 
 
