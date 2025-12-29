@@ -25,7 +25,8 @@ h3 {
 
 /* prevent navbar overlap due to fixed position */
 .section {
-    padding-top: 4rem; 
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 .hide {
@@ -110,14 +111,6 @@ footer i {
     color: black;
 }
 
-.button-edit {
-    color: var(--primary-color);
-}
-
-.button-delete {
-    color: rgb(220, 0, 0);
-}
-
 /* Icons for edit and delete */
 .button-edit,
 .button-delete {
@@ -127,12 +120,20 @@ footer i {
     background-color: white;
 }
 
+.button-edit {
+    color: var(--primary-color);
+}
+
+.button-delete {
+    color: rgb(220, 0, 0);
+}
+
 /* Edit Book Page */
 .edit-preview>img {
     width: 60%;
 }
 
-/* Book views on library page */
+/* Library page */
 .book ul {
     list-style-type: none;
     padding: 0px;
@@ -151,5 +152,30 @@ footer i {
 #library-filter,
 #library-sort {
     color: var(--primary-color);
-    cursor: pointer;
+}
+
+/* Search, Filter and Sort fields */
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    background-image: url("../images/icon-search.png");
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    padding: 2px 5px 2px 30px;
+}
+
+#form-sort select,
+#form-filter select {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Home Page */
+#home-hero {
+    width: 100%;
 }
