@@ -65,24 +65,29 @@ footer i {
 /* Alert messages */
 
 .alert-success {
-    background-color: rgba(14, 211, 14, 0.9);
+    background-color: #DFF0D5;
+    color: #3C7B6A;
+    border: 1px solid #3C7B6A;
 }
 
 .alert-danger {
-    background-color: rgba(204, 11, 11, 0.9);
+    background-color: #F2DEDE;
+    color: #AA4542;
+    border: 1px solid #AA4542;
 }
 
 .alert-warning {
-    background-color: rgba(207, 120, 6, 0.9);
+    background-color: #FCF8E1;
+    color: #8C6D37;
+    border: 1px solid #8C6D37;
 }
 
 #messages {
     position: absolute;
-    top: 5rem;
     left: 0;
     right: 0;
+    top: 2rem;
     margin: auto;
-    width: 50vw;
     text-align: center;
 }
 
