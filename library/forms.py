@@ -26,5 +26,6 @@ class EditBookForm(forms.ModelForm):
         """
         model = Book
         fields = (
-            "title", "author", "isbn", "cover_url", "status", "price",
+            "title", "author", "isbn", "cover_url",
+            "status", "price", "comments",
         )
