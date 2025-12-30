@@ -42,7 +42,7 @@
     <!-- Books -->
     <div class="row g-3 mt-1">
         {% for book in sales_list %}
-        <div class="book col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" book_id="{{ book.id }}" data-url="{% url 'book_details' book.id %}">
             <div class="row">
                 <div class="col-4">
                     {% if book.cover_url %}
@@ -78,11 +78,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="detailModalLabel">Modal title</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    ...
+                <div class="modal-body" id="detailModalBody">
+                    <!-- Load content through AJAX Jquery from template book_details.html -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-confirm" data-bs-dismiss="modal">Close</button>                    
