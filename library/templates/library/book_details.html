@@ -19,9 +19,10 @@
             {% else%}
             <li>Price: n/a</li>
             {% endif %}
-            
+
             <li>Contact Seller: {{ book.user.email }}</li>
-            <li>Comments: </li>
+            <li>Posted: {{ book.created_on }}</li>
+            <li>Comments: {{ book.comments }}</li>
         </ul>
 
     </div>
