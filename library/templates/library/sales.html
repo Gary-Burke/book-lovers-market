@@ -55,8 +55,11 @@
                     <ul class="book-text">
                         <li>{{ book.title }}</li>
                         <li> - {{ book.author }}</li>
+
+                        {% if book.price %}
                         <li>{{ book.price }}€</li>
-                        <li>Seller Contact: {{ book.user.email }}</li>
+                        {% endif%}
+                        
                     </ul>
                     <div class="d-flex justify-content-start">
                         <a class="col-1 button-edit me-2 hide" book_id="{{ book.id }}" href="#"><i
