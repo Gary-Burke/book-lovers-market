@@ -16,10 +16,10 @@ body {
     font-family: var(--primary-font);
 }
 
-
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: var(--heading-font);
 }
 
@@ -114,6 +114,20 @@ footer i {
     background-color: white;
     border: solid 1px grey;
     color: black;
+}
+
+.btn-isbn {
+    background-color: var(--secondary-color);
+    border-radius: 0.8rem;
+    border: none;
+    padding: 6px 12px;
+}
+
+.btn-manual {
+    background-color: var(--primary-color);
+    border-radius: 0.8rem;
+    border: none;
+    padding: 6px 12px;
 }
 
 /* Icons for edit and delete */
