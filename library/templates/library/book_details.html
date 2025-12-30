@@ -1,0 +1,28 @@
+<!-- Used to load content from Book model to Bootstrap modal in template sales -->
+{% load static %}
+
+<div class="row book-details">
+    <div class="col-4">
+        {% if book.cover_url %}
+        <img src="{{ book.cover_url }}" alt="{{ book.title }}">
+        {% else %}
+        <img src="{% static 'images/no-cover.png' %}" alt="No cover">
+        {% endif %}
+    </div>
+    <div class="col-8 ps-0">
+        <ul class="book-text">
+            <li>Title: {{ book.title }}</li>
+            <li>Author: {{ book.author }}</li>
+
+            {% if book.price %}
+            <li>Price: {{ book.price }} €</li>
+            {% else%}
+            <li>Price: n/a</li>
+            {% endif %}
+            
+            <li>Contact Seller: {{ book.user.email }}</li>
+            <li>Comments: </li>
+        </ul>
+
+    </div>
+</div>

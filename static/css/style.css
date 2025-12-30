@@ -189,3 +189,12 @@ footer i {
 .sales .book {
     cursor: pointer;
 }
+
+/* Book Details */
+.book-details ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
