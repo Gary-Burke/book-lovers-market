@@ -22,6 +22,7 @@ class Book(models.Model):
     price = models.DecimalField(
         max_digits=5, decimal_places=2, blank=True, null=True
     )
+    comments = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
 
