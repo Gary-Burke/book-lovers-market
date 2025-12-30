@@ -184,3 +184,8 @@ footer i {
 #home-hero {
     width: 100%;
 }
+
+/* Sales Page */
+.sales .book {
+    cursor: pointer;
+}
