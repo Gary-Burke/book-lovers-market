@@ -29,3 +29,19 @@ class EditBookForm(forms.ModelForm):
             "title", "author", "isbn", "cover_url",
             "status", "price", "comments",
         )
+
+
+class ManualBookForm(forms.ModelForm):
+    """
+    Form class for users to add their books by manual entries
+    """
+    class Meta:
+        """
+        Django model: Book
+        Fields to add to form model
+        """
+        model = Book
+        fields = (
+            "title", "author", "isbn", "cover_url",
+            "status", "price", "comments",
+        )
