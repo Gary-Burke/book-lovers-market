@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.db.models import Q
-from .forms import ISBNForm, EditBookForm
+from .forms import ISBNForm, EditBookForm, ManualBookForm
 from .models import Book
 
 # Create your views here.
@@ -121,6 +121,54 @@ def add_book_by_isbn(request):
         request,
         "library/add_book.html",
         {"add_form": add_form}
+    )
+
+
+def add_book_manual(request):
+    """
+    Displays a form to enter all book details manually
+    Prevents duplicate ISBN or Titles to be added to user library
+    """
+    if request.method == "POST":
+        add_form_manual = ManualBookForm(data=request.POST)
+
+        if add_form_manual.is_valid():
+            isbn = add_form_manual.cleaned_data["isbn"]
+            title = add_form_manual.cleaned_data["title"]
+            if Book.objects.filter(
+                    user=request.user, isbn=isbn).exists():
+                messages.add_message(
+                    request, messages.WARNING,
+                    "You have already added this ISBN."
+                )
+            elif Book.objects.filter(
+                    user=request.user, title=title).exists():
+                messages.add_message(
+                    request, messages.WARNING,
+                    "You have already added this title."
+                )
+            else:
+                book = add_form_manual.save(commit=False)
+                book.user = request.user
+                book.save()
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    "Book successfully added to your Library!"
+                )
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                "Unable to add book. Please try again later"
+            )
+
+    add_form_manual = ManualBookForm()
+
+    return render(
+        request,
+        "library/add_book.html",
+        {
+            "add_form_manual": add_form_manual
+        },
     )
 
 
