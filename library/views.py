@@ -2,7 +2,7 @@ import requests
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import generic
+from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.db.models import Q
 from .forms import ISBNForm, EditBookForm
@@ -11,7 +11,7 @@ from .models import Book
 # Create your views here.
 
 
-class BookList(LoginRequiredMixin, generic.ListView):
+class BookList(LoginRequiredMixin, ListView):
     model = Book
     template_name = "library/library.html"
 
@@ -171,7 +171,7 @@ def edit_book(request, book_id):
     )
 
 
-class SalesList(generic.ListView):
+class SalesList(ListView):
     model = Book
     template_name = "library/sales.html"
     context_object_name = "sales_list"
@@ -206,3 +206,9 @@ class SalesList(generic.ListView):
         context = super().get_context_data(**kwargs)
         context["current_sort"] = self.request.GET.get("sort", "author")
         return context
+
+
+class BookDetailView (DetailView):
+    model = Book
+    template_name = "library/book_details.html"
+    context_object_name = "book"
