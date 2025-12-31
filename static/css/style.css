@@ -23,14 +23,14 @@ h4 {
     font-family: var(--heading-font);
 }
 
+.hide {
+    visibility: hidden;
+}
+
 /* prevent navbar overlap due to fixed position */
 .section {
     padding-top: 4rem;
     padding-bottom: 2rem;
-}
-
-.hide {
-    visibility: hidden;
 }
 
 /* Nav and Footer */
@@ -116,18 +116,19 @@ footer i {
     color: black;
 }
 
-.btn-isbn {
-    background-color: var(--secondary-color);
-    border-radius: 0.8rem;
-    border: none;
-    padding: 6px 12px;
-}
-
+.btn-isbn,
 .btn-manual {
     background-color: var(--primary-color);
+    color: var(--alt-color);
     border-radius: 0.8rem;
     border: none;
-    padding: 6px 12px;
+    padding: 3px 10px;    
+    text-decoration: none;
+}
+
+.selected {
+    background-color: #65b6d6;
+    cursor: not-allowed;
 }
 
 /* Icons for edit and delete */
