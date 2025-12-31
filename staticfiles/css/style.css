@@ -16,21 +16,21 @@ body {
     font-family: var(--primary-font);
 }
 
-
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: var(--heading-font);
+}
+
+.hide {
+    visibility: hidden;
 }
 
 /* prevent navbar overlap due to fixed position */
 .section {
     padding-top: 4rem;
     padding-bottom: 2rem;
-}
-
-.hide {
-    visibility: hidden;
 }
 
 /* Nav and Footer */
@@ -49,12 +49,17 @@ footer {
 }
 
 .nav-item .nav-link,
+nav,
 footer {
     color: var(--alt-color);
 }
 
 .logo {
     height: 2rem;
+}
+
+.greeting {
+    font-size: 0.875rem;
 }
 
 footer i {
@@ -99,7 +104,7 @@ footer i {
 }
 
 .btn-confirm:hover {
-    background-color: white;
+    background-color: var(--alt-color);
     border: solid 1px var(--secondary-color);
     color: var(--secondary-color);
 }
@@ -107,13 +112,28 @@ footer i {
 .button-cancel {
     background-color: grey;
     border-radius: 0.8rem;
-    color: white;
+    color: var(--alt-color);
 }
 
 .button-cancel:hover {
-    background-color: white;
+    background-color: var(--alt-color);
     border: solid 1px grey;
     color: black;
+}
+
+.btn-isbn,
+.btn-manual {
+    background-color: var(--primary-color);
+    color: var(--alt-color);
+    border-radius: 0.8rem;
+    border: none;
+    padding: 3px 10px;
+    text-decoration: none;
+}
+
+.selected {
+    background-color: #65b6d6;
+    cursor: not-allowed;
 }
 
 /* Icons for edit and delete */
@@ -122,7 +142,7 @@ footer i {
     padding: 0px;
     margin: 0px;
     border: none;
-    background-color: white;
+    background-color: var(--alt-color);
 }
 
 .button-edit {
@@ -167,10 +187,7 @@ footer i {
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    background-color: white;
-    background-image: url("../images/icon-search.png");
-    background-position: 3px center;
-    background-repeat: no-repeat;
+    background: var(--alt-color) url("../images/icon-search.png") no-repeat 3px center;
     padding: 2px 5px 2px 30px;
 }
 
@@ -178,6 +195,7 @@ footer i {
 #form-filter select {
     border: 2px solid #ccc;
     border-radius: 4px;
+    background-color: var(--alt-color);
 }
 
 /* Home Page */
@@ -198,3 +216,9 @@ footer i {
 }
 
 
+/* Medium screen sizes - 768px up*/
+@media screen and (min-width: 768px) {
+    .greeting {
+        font-size: 1rem;
+    }
+}
