@@ -39,6 +39,19 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/logo-sm.png' %}" alt="Book Lovers Market logo" class="logo">
             </a>
+
+            <!-- User Greeting -->
+            <div class="d-flex flex-column flex-md-row align-items-md-center me-auto ms-0 ms-md-2">
+                <span class="greeting">Welcome</span>
+                <span class="greeting ms-md-1 ">
+                    {% if user.is_authenticated %}
+                    {{ user }}
+                    {% else %}
+                    Guest
+                    {% endif %}
+                </span>
+            </div>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
