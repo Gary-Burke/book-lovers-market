@@ -6,15 +6,21 @@
 
 {% if user.is_authenticated %}
 
-<div class="container">
+<div class="container add-books">
     <h3 class="my-3">Add Books to your Library</h3>
-    <a id="btn-isbn" href="{% url 'add_book' %}" class="btn">ISBN</a>
-    <a id="btn-manual" href="{% url 'add_book_manual' %}" class="ms-2 btn">Manually</a>
+    <a href="#" data-url="{% url 'add_book' %}" class="btn-isbn {% if active == 'isbn' %}selected{% endif %}">ISBN</a>
+    <a href="#" data-url="{% url 'add_book_manual' %}" class="ms-2 btn-manual {% if active == 'manual' %}selected{% endif %}">Manually</a>
 
     <!-- Add book form ISBN -->
     <div class="row isbn mt-2">
         <div class="col-md-4 mt-3">
-            <h4>Add Book</h4>
+
+            {% if active == 'isbn' %}
+            <h4>Add Book by ISBN</h4>
+            {% else %}
+            <h4>Add Book details manually</h4>
+            {% endif %}
+
             <form method="post">
                 {% csrf_token %}
                 {{ add_form | crispy }}
@@ -39,4 +45,8 @@
 
 {% endif %}
 
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/add.js' %}"></script>
 {% endblock %}
