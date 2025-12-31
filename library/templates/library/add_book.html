@@ -7,9 +7,9 @@
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h3 class="my-3">Expand your Library</h3>
-    <button class="btn-isbn">ISBN</button>
-    <button class="btn-manual ms-2 mb-2">Manually</button>
+    <h3 class="my-3">Add Books to your Library</h3>
+    <a id="btn-isbn" href="{% url 'add_book' %}" class="btn">ISBN</a>
+    <a id="btn-manual" href="{% url 'add_book_manual' %}" class="ms-2 btn">Manually</a>
 
     <!-- Add book form ISBN -->
     <div class="row isbn">
