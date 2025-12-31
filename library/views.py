@@ -120,7 +120,10 @@ def add_book_by_isbn(request):
     return render(
         request,
         "library/add_book.html",
-        {"add_form": add_form}
+        {
+            "add_form": add_form,
+            "active": "isbn"
+        }
     )
 
 
@@ -167,7 +170,8 @@ def add_book_manual(request):
         request,
         "library/add_book.html",
         {
-            "add_form_manual": add_form_manual
+            "add_form_manual": add_form_manual,
+            "active": "manual"
         },
     )
 
