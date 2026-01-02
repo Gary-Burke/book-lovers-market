@@ -28,7 +28,7 @@
 
         <!-- Search field -->
         <div class="col col-sm-8 col-lg-5 col-xl-4 text-end">
-            <form method="get" class="" id="form-search">
+            <form method="get" id="form-search">
                 <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
                     value="{{ request.GET.search }}" autocomplete="off">
 
@@ -42,7 +42,8 @@
     <!-- Books -->
     <div class="row g-3 mt-3">
         {% for book in sales_list %}
-        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" book_id="{{ book.id }}" data-url="{% url 'book_details' book.id %}">
+        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" book_id="{{ book.id }}"
+            data-url="{% url 'book_details' book.id %}">
             <div class="row">
                 <div class="col-4">
                     {% if book.cover_url %}
@@ -59,7 +60,7 @@
                         {% if book.price %}
                         <li>{{ book.price }}€</li>
                         {% endif%}
-                        
+
                     </ul>
                     <div class="d-flex justify-content-start">
                         <a class="col-1 button-edit me-2 hide" book_id="{{ book.id }}" href="#"><i
@@ -87,7 +88,7 @@
                     <!-- Load content through AJAX Jquery from template book_details.html -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-confirm" data-bs-dismiss="modal">Close</button>                    
+                    <button type="button" class="btn btn-confirm" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

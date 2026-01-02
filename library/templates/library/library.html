@@ -10,29 +10,27 @@
     <h3 class="my-3">Welcome to your Library, {{user}}</h3>
 
     <div class="row row-cols-1 row-cols-md-2 gy-2 align-items-center justify-content-between">
-        
 
-            <!-- Add Books button -->
-            <div class="col-4">
-                <a class="btn btn-confirm px-2" href="{% url 'add_book' %}"><i class="fa-solid fa-plus"></i> Books</a>
-            </div>
+        <!-- Add Books button -->
+        <div class="col-4">
+            <a class="btn btn-confirm px-2" href="{% url 'add_book' %}"><i class="fa-solid fa-plus"></i> Books</a>
+        </div>
 
-            <!-- Search field -->
-            <div class="col-8 col-md-6 col-lg-5 col-xl-4 text-end">
-                <form method="get" class="" id="form-search">
-                    <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
-                        value="{{ request.GET.search }}" autocomplete="off">
+        <!-- Search field -->
+        <div class="col-8 col-md-6 col-lg-5 col-xl-4 text-end">
+            <form method="get" id="form-search">
+                <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
+                    value="{{ request.GET.search }}" autocomplete="off">
 
-                    {% if request.GET.status %}
-                    <input type="hidden" name="status" value="{{ request.GET.status }}">
-                    {% endif %}
+                {% if request.GET.status %}
+                <input type="hidden" name="status" value="{{ request.GET.status }}">
+                {% endif %}
 
-                    {% if request.GET.sort %}
-                    <input type="hidden" name="sort" value="{{ request.GET.sort }}">
-                    {% endif %}
-                </form>
-            </div>
-        
+                {% if request.GET.sort %}
+                <input type="hidden" name="sort" value="{{ request.GET.sort }}">
+                {% endif %}
+            </form>
+        </div>
     </div>
 
     <!-- Sort and filter icons and dropdown menus -->
