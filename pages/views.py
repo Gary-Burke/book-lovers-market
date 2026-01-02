@@ -7,7 +7,19 @@ from .forms import FeedbackForm
 
 
 def about_us(request):
+    """
+    Renders a form for users to submit feedback related to
+    :model:`pages.Feedback`
 
+    **Context**
+
+    ``feedback_form``
+        An instance of :form:`pages.FeedbackForm`
+
+    **Template**
+
+    :template:`pages/about.html`
+    """
     if request.method == "POST":
         feedback_form = FeedbackForm(data=request.POST)
         if feedback_form.is_valid():
@@ -34,7 +46,19 @@ def about_us(request):
 
 
 def home_page(request):
+    """
+    Renders the most recent hero image, quote and author
 
+    **Context**
+
+    ``home``
+        An instance of :model:`pages.Home`
+
+    **Template**
+
+    :template:`pages/home.html`
+
+    """
     home = Home.objects.all().order_by("-created_on").first()
 
     return render(

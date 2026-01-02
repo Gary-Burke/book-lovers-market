@@ -12,13 +12,30 @@ from .models import Book
 
 
 class BookList(LoginRequiredMixin, ListView):
+    """
+    Returns all books in :model:`library.Book`
+
+    **Context**
+
+    ``queryset``
+    All instances of books in :model:`library.Book` that are
+    related to :model:`auth.User`.
+    queryset further filtered by:
+     - Search input from user
+     - Filter options based on field "status"
+     - Ordered by user choice
+
+     **Template:**
+
+     :template:`library/library.html`
+    """
     model = Book
     template_name = "library/library.html"
 
     def get_queryset(self):
         queryset = Book.objects.filter(user=self.request.user)
 
-        # Filter by search
+        # Filter by user input from search bar
         search = self.request.GET.get("search")
         if search:
             queryset = queryset.filter(
@@ -27,12 +44,12 @@ class BookList(LoginRequiredMixin, ListView):
                 Q(isbn__icontains=search)
             )
 
-        # Filter by status
+        # Filter by status selected by user
         status = self.request.GET.get("status")
         if status:
             queryset = queryset.filter(status=status)
 
-        # Handle sorting
+        # Set order by based on user selection
         sort = self.request.GET.get("sort", "author")
 
         allowed_sorts = [
@@ -56,7 +73,7 @@ class BookList(LoginRequiredMixin, ListView):
 def fetch_book_by_isbn(isbn):
     """
     Fetches an object from Google Books API based on the ISBN argument.
-    Returns the book title, author and thumbnail image of given ISBN.
+    Returns the book title, author, ISBN and thumbnail image url of given ISBN.
     """
     url = f"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}"
     response = requests.get(url)
@@ -78,10 +95,22 @@ def fetch_book_by_isbn(isbn):
 
 def add_book_by_isbn(request):
     """
-    Displays a form to enter ISBN number
+    Creates an instance of :model:`library.Book`
     Calls fetch_book_by_isbn view and passes user input as ISBN
-    If the ISBN is found, then it will update the Book model
-    Prevents duplicate ISBN to be added to user library
+
+    **Context**
+
+    ``add_form``
+        An instance of :form:`library.ISBNForm`
+    ``book_data``
+        Data obtained from Google Books API used to create
+        an instance of :model:`library.Book`
+    ``active``
+        Argument passed to template to determine class assignment
+
+    **Template**
+
+    :template:`library/add_book.html`
     """
     if request.method == "POST":
         add_form = ISBNForm(data=request.POST)
@@ -129,8 +158,18 @@ def add_book_by_isbn(request):
 
 def add_book_manual(request):
     """
-    Displays a form to enter all book details manually
-    Prevents duplicate ISBN or Titles to be added to user library
+    Creates an instance of :model:`library.Book`
+
+    **Context**
+
+    ``add_form_manual``
+        An instance of :form:`library.ManualBookForm`
+    ``active``
+        Argument passed to template to determine class assignment
+
+    **Template**
+
+    :template:`library/add_book.html`
     """
     if request.method == "POST":
         add_form_manual = ManualBookForm(data=request.POST)
@@ -177,6 +216,14 @@ def add_book_manual(request):
 
 
 def delete_book(request, book_id):
+    """
+    Delete an individual book entry.
+
+    **Context**
+
+    ``book``
+        An instance of :model:`library.Book`.
+    """
     book = get_object_or_404(Book, pk=book_id)
 
     if book.user == request.user:
@@ -192,6 +239,20 @@ def delete_book(request, book_id):
 
 
 def edit_book(request, book_id):
+    """
+    Display an individual book to be edited.
+
+    **Context**
+
+    ``book``
+        An instance of :model:`library.Book`.
+    ``edit_book_form``
+        An instance of :form:`library.EditBookForm`
+
+    **Template**
+
+    :template:`library/edit_book.html`
+    """
     book = get_object_or_404(Book, pk=book_id)
 
     if request.method == "POST":
@@ -224,6 +285,22 @@ def edit_book(request, book_id):
 
 
 class SalesList(ListView):
+    """
+    Returns all books in :model:`library.Book`
+
+    **Context**
+
+    ``queryset``
+    All instances of books in :model:`library.Book` that are for sale.
+
+    queryset further filtered by:
+     - Search input from user
+     - Ordered by user choice
+
+     **Template:**
+
+     :template:`library/sales.html`
+    """
     model = Book
     template_name = "library/sales.html"
     context_object_name = "sales_list"
@@ -231,7 +308,7 @@ class SalesList(ListView):
     def get_queryset(self):
         queryset = Book.objects.filter(status=1)
 
-        # Filter by search
+        # Filter by user input from search bar
         search = self.request.GET.get("search")
         if search:
             queryset = queryset.filter(
@@ -240,7 +317,7 @@ class SalesList(ListView):
                 Q(isbn__icontains=search)
             )
 
-        # Handle sorting
+        # Set order by based on user selection
         sort = self.request.GET.get("sort")
 
         allowed_sorts = [
@@ -261,6 +338,18 @@ class SalesList(ListView):
 
 
 class BookDetailView (DetailView):
+    """
+    Renders an individual book from :model:`library.Book`.
+
+    **Context**
+
+    ``book``
+        An instance of :model:`library.Book`.
+
+    **Template:**
+
+    :template:`library/book_details.html`
+    """
     model = Book
     template_name = "library/book_details.html"
     context_object_name = "book"
