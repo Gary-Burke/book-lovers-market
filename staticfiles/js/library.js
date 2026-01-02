@@ -1,5 +1,7 @@
 $(document).ready(function () {
     const deleteModal = new bootstrap.Modal($("#deleteModal"));
+    let timer;
+    const delay = 500;
 
     /**
      * Shows/Hides edit and delete icons when individual cards are hovered on
@@ -28,6 +30,17 @@ $(document).ready(function () {
         let bookId = $(this).attr("book_id");
         $(".button-edit").attr("href", `edit_book/${bookId}`);
         $("#editBookForm").attr("action", `edit_book/${bookId}`);
+    });
+
+    /**
+     * Timer function to auto submit search input after keyboard inactivity
+     */
+    $("#search-input").on("input", function () {
+        clearTimeout(timer);
+
+        timer = setTimeout(function () {
+            $("#form-search").submit();
+        }, delay);
     });
 
 });
