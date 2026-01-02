@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 
 
 class Book(models.Model):
+    """
+    Stores a single book entry related to :model:`auth.User`.
+    """
     STATUS = (
         (0, "Owned"),
         (1, "For Sale"),

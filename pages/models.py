@@ -6,8 +6,7 @@ from cloudinary.models import CloudinaryField
 
 class Home(models.Model):
     """
-    Stores a single instance for the home page such as the hero image,
-    book quote and author
+    Stores a single instance for the home page content
     """
     image = CloudinaryField('image', default='placeholder')
     quote = models.TextField()
