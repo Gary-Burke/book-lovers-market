@@ -207,14 +207,6 @@ footer i {
     cursor: pointer;
 }
 
-/* Book Details */
-.book-details ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-
 /* Medium screen sizes - 768px up*/
 @media screen and (min-width: 768px) {
     .greeting {

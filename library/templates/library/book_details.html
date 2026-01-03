@@ -2,7 +2,7 @@
 {% load static %}
 
 <div class="row book-details">
-    <div class="col-4">
+    <div class="book col-4">
         {% if book.cover_url %}
         <img src="{{ book.cover_url }}" alt="{{ book.title }}">
         {% else %}
@@ -10,7 +10,7 @@
         {% endif %}
     </div>
     <div class="col-8 ps-0">
-        <ul class="book-text">
+        <ul>
             <li>Title: {{ book.title }}</li>
             <li>Author: {{ book.author }}</li>
 
