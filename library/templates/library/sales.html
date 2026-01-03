@@ -42,7 +42,7 @@
     <!-- Books -->
     <div class="row g-3 mt-3">
         {% for book in sales_list %}
-        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" book_id="{{ book.id }}"
+        <div class="book col-12 col-md-6 col-lg-4 col-xl-3"
             data-url="{% url 'book_details' book.id %}">
             <div class="row">
                 <div class="col-4">
@@ -63,9 +63,9 @@
 
                     </ul>
                     <div class="d-flex justify-content-start">
-                        <a class="col-1 button-edit me-2 hide" book_id="{{ book.id }}" href="#"><i
+                        <a class="col-1 button-edit me-2 hide" href="#"><i
                                 class="fa-solid fa-pencil"></i></a>
-                        <a class="col-1 button-delete me-1 hide" book_id="{{ book.id }}" href="#"><i
+                        <a class="col-1 button-delete me-1 hide" href="#"><i
                                 class="fa-solid fa-xmark"></i></a>
                     </div>
                 </div>
