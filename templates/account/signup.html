@@ -18,11 +18,17 @@
         <a class="link" href="{{ login_url }}">sign in</a> instead.
         {% endblocktrans %}</p>
 
-      <form class="signup " id="signup_form" method="post"
-        action="{% url 'account_signup' %}">
+      <form class="signup " id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form|crispy }}
-        {{ form.password1.help_text|safe }}
+
+        <!-- Used chatGPT to solve html validation error related aria-describedby attribute -->
+        {% if form.password1.help_text %}
+        <div id="id_password1_helptext" class="form-text">
+          {{ form.password1.help_text|safe }}
+        </div>
+        {% endif %}
+
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
