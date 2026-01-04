@@ -23,4 +23,24 @@ Direct links to the results have been added unless made impossible due to login/
 | templates | [signup.html](https://github.com/Gary-Burke/book-lovers-market/blob/main/templates/account/signup.html) | [Results Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbook-lovers-market-4a712f119c48.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](documentation/testing/validation/html-templates-signup.png) | No errors or warnings |
 | templates | [password_reset.html](https://github.com/Gary-Burke/book-lovers-market/blob/main/templates/account/signup.html) | [Results Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbook-lovers-market-4a712f119c48.herokuapp.com%2Faccounts%2Fpassword%2Freset%2F) | ![screenshot](documentation/testing/validation/html-templates-password-reset.png) | No errors or warnings |
 | templates | [password_reset_done.html](https://github.com/Gary-Burke/book-lovers-market/blob/main/templates/account/signup.html) | [Results Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbook-lovers-market-4a712f119c48.herokuapp.com%2Faccounts%2Fpassword%2Freset%2Fdone%2F) | ![screenshot](documentation/testing/validation/html-templates-password-reset-done.png) | No errors or warnings |
+| templates | [404.html](https://github.com/Gary-Burke/book-lovers-market/blob/main/templates/404.html) | n/a | ![screenshot](documentation/testing/validation/html-templates-404.png) | No errors or warnings |
+
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | URL | Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| static | [style.css](https://github.com/Gary-Burke/book-lovers-market/blob/main/static/css/style.css) | [Results Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbook-lovers-market-4a712f119c48.herokuapp.com%2Fstatic%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#warnings) | ![screenshot](documentation/testing/validation/css-static-style.png) | All warnings were checked and can be safely ignored, as they are related to CSS variables and vendor extensions from Autoprefixer CSS online. |
+
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | [add.js](https://github.com/Gary-Burke/book-lovers-market/blob/main/static/js/add.js) | ![screenshot](documentation/testing/validation/js-static-add.png) | No warnings or errors |
+| static | [library.js](https://github.com/Gary-Burke/book-lovers-market/blob/main/static/js/library.js) | ![screenshot](documentation/testing/validation/js-static-library.png) | Warning can be ignored as it is related to the external Bootstrap library |
+| static | [sales.js](https://github.com/Gary-Burke/book-lovers-market/blob/main/static/js/sales.js) | ![screenshot](documentation/testing/validation/js-static-sales.png) | Warning can be ignored as it is related to the external Bootstrap library |
 
