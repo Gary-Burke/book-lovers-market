@@ -1,3 +1,5 @@
+/* jshint esversion: 11, jquery: true */
+
 $(document).ready(function () {
     const detailModal = new bootstrap.Modal($("#detailModal"));
     let timer;
