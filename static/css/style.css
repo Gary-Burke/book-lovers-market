@@ -41,11 +41,13 @@ footer {
 }
 
 nav {
-    box-shadow: 0 3px 4px rgb(24, 24, 24);
+    -webkit-box-shadow: 0 3px 4px rgb(24, 24, 24);
+            box-shadow: 0 3px 4px rgb(24, 24, 24);
 }
 
 footer {
-    box-shadow: 0 -3px 3px rgb(24, 24, 24);
+    -webkit-box-shadow: 0 -3px 3px rgb(24, 24, 24);
+            box-shadow: 0 -3px 3px rgb(24, 24, 24);
 }
 
 .nav-item .nav-link,
@@ -137,6 +139,7 @@ footer i {
 }
 
 /* Icons for edit and delete */
+
 .button-edit,
 .button-delete {
     padding: 0px;
@@ -153,11 +156,13 @@ footer i {
 }
 
 /* Edit Book Page */
+
 .edit-preview>img {
     width: 60%;
 }
 
 /* Library page */
+
 .book ul {
     list-style-type: none;
     padding: 0px;
@@ -182,7 +187,8 @@ footer i {
 
 #search-input {
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 2rem;
     font-size: 1rem;
@@ -198,11 +204,13 @@ footer i {
 }
 
 /* Home Page */
+
 #home-hero {
     width: 100%;
 }
 
 /* Sales Page */
+
 .sales .book {
     cursor: pointer;
 }
