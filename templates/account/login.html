@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -9,29 +10,24 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-4 offset-md-2">
+    <div class="col col-md-8 col-lg-6 mt-4 offset-md-2">
       <h2>{% trans "Sign In" %}</h2>
-
       <p class="lead">{% blocktrans %}Welcome back to the Book Lover's Market!</p>
       <p>If you don't have an account yet, please <a class="link" href="{{ signup_url }}">sign up</a> first.
         {% endblocktrans %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
+
+      <form class="login col-sm-9 col-md-10 col-xl-8 col-xxl-7" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <a href="{% url 'account_reset_password' %}">
           Forgot password?
         </a>
-        <div class="mt-3">
-          <button class="btn btn-confirm col-12" type="submit" style="max-width: 366px;">{% trans "Sign In" %}</button>
-        </div>
+        <button class="btn btn-confirm col-12 mt-3" type="submit">{% trans "Sign In" %}</button>
       </form>
+
     </div>
   </div>
 </div>
