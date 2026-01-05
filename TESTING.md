@@ -65,3 +65,20 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | pages | [test_forms.py](https://github.com/Gary-Burke/book-lovers-market/blob/main/pages/test_forms.py) | [Results Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Gary-Burke/book-lovers-market/main/pages/test_forms.py) | ![screenshot](documentation/testing/validation/py-pages-test_forms.png) | No errors found |
 | pages | [urls.py](https://github.com/Gary-Burke/book-lovers-market/blob/main/pages/urls.py) | [Results Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Gary-Burke/book-lovers-market/main/pages/urls.py) | ![screenshot](documentation/testing/validation/py-pages-urls.png) | No errors found |
 | pages | [views.py](https://github.com/Gary-Burke/book-lovers-market/blob/main/pages/views.py) | [Results Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Gary-Burke/book-lovers-market/main/pages/views.py) | ![screenshot](documentation/testing/validation/py-pages-views.png) | No errors found |
+
+## Responsiveness
+
+I've tested my deployed project to check for responsive design.
+
+| Page | Mobile | Tablet | Desktop | Notes |
+| --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/testing/responsiveness/mobile-home.png) | ![screenshot](documentation/testing/responsiveness/tablet-home.png) | ![screenshot](documentation/testing/responsiveness/desktop-home.png) | Works as expected |
+| About | ![screenshot](documentation/testing/responsiveness/mobile-about.png) | ![screenshot](documentation/testing/responsiveness/tablet-about.png) | ![screenshot](documentation/testing/responsiveness/desktop-about.png) | Works as expected |
+| Library | ![screenshot](documentation/testing/responsiveness/mobile-library.png) | ![screenshot](documentation/testing/responsiveness/tablet-library.png) | ![screenshot](documentation/testing/responsiveness/desktop-library.png) | Works as expected |
+| Add Book | ![screenshot](documentation/testing/responsiveness/mobile-add-book.png) | ![screenshot](documentation/testing/responsiveness/tablet-add-book.png) | ![screenshot](documentation/testing/responsiveness/desktop-add-book.png) | Works as expected |
+| Add Book Manual | ![screenshot](documentation/testing/responsiveness/mobile-add-book-manual.png) | ![screenshot](documentation/testing/responsiveness/tablet-add-book-manual.png) | ![screenshot](documentation/testing/responsiveness/desktop-add-book-manual.png) | Works as expected |
+| Edit Book | ![screenshot](documentation/testing/responsiveness/mobile-edit-book.png) | ![screenshot](documentation/testing/responsiveness/tablet-edit-book.png) | ![screenshot](documentation/testing/responsiveness/desktop-edit-book.png) | Works as expected |
+| Sales | ![screenshot](documentation/testing/responsiveness/mobile-sales.png) | ![screenshot](documentation/testing/responsiveness/tablet-sales.png) | ![screenshot](documentation/testing/responsiveness/desktop-sales.png) | Works as expected |
+| Register | ![screenshot](documentation/testing/responsiveness/mobile-register.png) | ![screenshot](documentation/testing/responsiveness/tablet-register.png) | ![screenshot](documentation/testing/responsiveness/desktop-register.png) | Works as expected |
+| Login | ![screenshot](documentation/testing/responsiveness/mobile-login.png) | ![screenshot](documentation/testing/responsiveness/tablet-login.png) | ![screenshot](documentation/testing/responsiveness/desktop-login.png) | Works as expected |
+| Password Reset | ![screenshot](documentation/testing/responsiveness/mobile-password-reset.png) | ![screenshot](documentation/testing/responsiveness/tablet-password-reset.png) | ![screenshot](documentation/testing/responsiveness/desktop-password-reset.png) | Works as expected |
