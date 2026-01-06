@@ -161,7 +161,7 @@ footer i {
     width: 60%;
 }
 
-/* Library page */
+/* Library & sales page*/
 
 .book ul {
     list-style-type: none;
@@ -175,7 +175,8 @@ footer i {
 
 .book img {
     width: 100%;
-    aspect-ratio: 1 / 1.25;
+    height: 90%;
+    
 }
 
 #library-filter,
@@ -183,7 +184,9 @@ footer i {
     color: var(--primary-color);
 }
 
-/* Search, Filter and Sort fields */
+.sales .book {
+    cursor: pointer;
+}
 
 #search-input {
     width: 100%;
@@ -207,12 +210,6 @@ footer i {
 
 #home-hero {
     width: 100%;
-}
-
-/* Sales Page */
-
-.sales .book {
-    cursor: pointer;
 }
 
 /* Medium screen sizes - 768px up*/
