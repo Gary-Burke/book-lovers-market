@@ -70,6 +70,7 @@ class BookList(LoginRequiredMixin, ListView):
         return context
 
 
+# Code from ChatGTP to help with Google Books API
 def fetch_book_by_isbn(isbn):
     """
     Fetches an object from Google Books API based on the ISBN argument.
@@ -85,11 +86,15 @@ def fetch_book_by_isbn(isbn):
     volume = data["items"][0]["volumeInfo"]
     image_links = volume.get("imageLinks", {})
 
+    thumbnail = image_links.get("thumbnail")
+    if thumbnail:
+        thumbnail = thumbnail.replace("http://", "https://", 1)
+
     return {
         "title": volume.get("title", "Unknown Title"),
         "author": ", ".join(volume.get("authors", ["Unknown Author"])),
         "isbn": isbn,
-        "cover_url": image_links.get("thumbnail"),
+        "cover_url": thumbnail,
     }
 
 
