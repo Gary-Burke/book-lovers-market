@@ -82,3 +82,19 @@ I've tested my deployed project to check for responsive design.
 | Register | ![screenshot](documentation/testing/responsiveness/mobile-register.png) | ![screenshot](documentation/testing/responsiveness/tablet-register.png) | ![screenshot](documentation/testing/responsiveness/desktop-register.png) | Works as expected |
 | Login | ![screenshot](documentation/testing/responsiveness/mobile-login.png) | ![screenshot](documentation/testing/responsiveness/tablet-login.png) | ![screenshot](documentation/testing/responsiveness/desktop-login.png) | Works as expected |
 | Password Reset | ![screenshot](documentation/testing/responsiveness/mobile-password-reset.png) | ![screenshot](documentation/testing/responsiveness/tablet-password-reset.png) | ![screenshot](documentation/testing/responsiveness/desktop-password-reset.png) | Works as expected |
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Page | Chrome | Firefox | Edge | Notes |
+| --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/testing/browsers/chrome-home.png) | ![screenshot](documentation/testing/browsers/firefox-home.png) | ![screenshot](documentation/testing/browsers/edge-home.jpeg) | Works as expected |
+| About | ![screenshot](documentation/testing/browsers/chrome-about.png) | ![screenshot](documentation/testing/browsers/firefox-about.png) | ![screenshot](documentation/testing/browsers/edge-about.jpeg) | Works as expected |
+| Register | ![screenshot](documentation/testing/browsers/chrome-register.png) | ![screenshot](documentation/testing/browsers/firefox-register.png) | ![screenshot](documentation/testing/browsers/edge-register.jpeg) | Works as expected |
+| Login | ![screenshot](documentation/testing/browsers/chrome-login.png) | ![screenshot](documentation/testing/browsers/firefox-login.png) | ![screenshot](documentation/testing/browsers/edge-login.jpeg) | Works as expected |
+| Sales | ![screenshot](documentation/testing/browsers/chrome-sales.png) | ![screenshot](documentation/testing/browsers/firefox-sales.png) | ![screenshot](documentation/testing/browsers/edge-sales.jpeg) | Works as expected |
+| Library | ![screenshot](documentation/testing/browsers/chrome-library.png) | ![screenshot](documentation/testing/browsers/firefox-library.png) | ![screenshot](documentation/testing/browsers/edge-library.jpeg) | Works as expected |
+| Add Book | ![screenshot](documentation/testing/browsers/chrome-add-book.png) | ![screenshot](documentation/testing/browsers/firefox-add-book.png) | ![screenshot](documentation/testing/browsers/edge-add-book.jpeg) | Works as expected |
+| Add Book Manual | ![screenshot](documentation/testing/browsers/chrome-add-book-manual.png) | ![screenshot](documentation/testing/browsers/firefox-add-book-manual.png) | ![screenshot](documentation/testing/browsers/edge-add-book-manual.jpeg) | Works as expected |
+| Edit Book | ![screenshot](documentation/testing/browsers/chrome-edit-book.png) | ![screenshot](documentation/testing/browsers/firefox-edit-book.png) | ![screenshot](documentation/testing/browsers/edge-edit-book.jpeg) | Works as expected |
