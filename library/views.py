@@ -309,7 +309,7 @@ class SalesList(ListView):
     model = Book
     template_name = "library/sales.html"
     context_object_name = "sales_list"
-    paginate_by = 8
+    paginate_by = 24
 
     def get_queryset(self):
         queryset = Book.objects.filter(status=1)
