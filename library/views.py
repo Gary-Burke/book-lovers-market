@@ -31,6 +31,7 @@ class BookList(LoginRequiredMixin, ListView):
     """
     model = Book
     template_name = "library/library.html"
+    paginate_by = 24
 
     def get_queryset(self):
         queryset = Book.objects.filter(user=self.request.user)
