@@ -35,7 +35,7 @@ h4 {
 
 /* Nav and Footer */
 
-nav,
+#nav-top,
 footer {
     background-color: var(--primary-color);
 }
