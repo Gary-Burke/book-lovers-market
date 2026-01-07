@@ -50,14 +50,9 @@ footer {
             box-shadow: 0 -3px 3px rgb(24, 24, 24);
 }
 
-#nav-top .nav-item .nav-link,
 #nav-top,
 footer {
     color: var(--alt-color);
-}
-
-.active {
-    text-decoration: underline;
 }
 
 .logo {
