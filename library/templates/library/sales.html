@@ -74,22 +74,29 @@
         {% endfor %}
 
         {% if is_paginated %}
-        <nav aria-label="Page navigation" id="nav-paginate">
-            <ul class="pagination justify-content-center mt-2">                
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-2">
                 {% if page_obj.has_previous %}
-                <li class="mx-2">
-                    <a href="?page={{ page_obj.previous_page_number }}" class="btn-page"> &laquo; PREV</a>
+                <li class="page-item">
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; Previous</a>
                 </li>
                 {% endif %}
 
+                {% for page_num in page_obj.paginator.page_range %}
+                <li class="page-item">
+                    <a href="?page={{ page_num }}" class="page-link" id="{% if page_num == page_obj.number %}current-page{% endif %}">{{ page_num }}</a>
+                </li>
+                {% endfor %}
+
                 {% if page_obj.has_next %}
-                <li class="mx-2">
-                    <a href="?page={{ page_obj.next_page_number }}" class="btn-page"> NEXT &raquo;</a>
+                <li class="page-item">
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &raquo;</a>
                 </li>
                 {% endif %}
             </ul>
         </nav>
         {% endif %}
+
     </div>
 
     <!-- Modal Details -->
