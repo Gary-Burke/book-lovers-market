@@ -42,8 +42,7 @@
     <!-- Books -->
     <div class="row g-3 mt-3">
         {% for book in sales_list %}
-        <div class="book col-12 col-md-6 col-lg-4 col-xl-3"
-            data-url="{% url 'book_details' book.id %}">
+        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" data-url="{% url 'book_details' book.id %}">
             <div class="row">
                 <div class="col-4">
                     {% if book.cover_url %}
@@ -63,10 +62,8 @@
 
                     </ul>
                     <div class="d-flex justify-content-start">
-                        <a class="col-1 button-edit me-2 hide" href="#"><i
-                                class="fa-solid fa-pencil"></i></a>
-                        <a class="col-1 button-delete me-1 hide" href="#"><i
-                                class="fa-solid fa-xmark"></i></a>
+                        <a class="col-1 button-edit me-2 hide" href="#"><i class="fa-solid fa-pencil"></i></a>
+                        <a class="col-1 button-delete me-1 hide" href="#"><i class="fa-solid fa-xmark"></i></a>
                     </div>
                 </div>
             </div>
@@ -75,10 +72,29 @@
         {% empty %}
         <p>Currently there are no books listed to buy</p>
         {% endfor %}
+
+        {% if is_paginated %}
+        <nav aria-label="Page navigation" id="nav-paginate">
+            <ul class="pagination justify-content-center mt-2">                
+                {% if page_obj.has_previous %}
+                <li class="mx-2">
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn-page"> &laquo; PREV</a>
+                </li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <li class="mx-2">
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn-page"> NEXT &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
 
     <!-- Modal Details -->
-    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -95,8 +111,8 @@
         </div>
     </div>
 </div>
-    {% endblock content %}
+{% endblock content %}
 
-    {% block extras %}
-    <script src="{% static 'js/sales.js' %}"></script>
-    {% endblock %}
+{% block extras %}
+<script src="{% static 'js/sales.js' %}"></script>
+{% endblock %}
