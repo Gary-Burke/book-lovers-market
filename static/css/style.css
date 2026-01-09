@@ -46,12 +46,12 @@ footer {
 
 #nav-top {
     -webkit-box-shadow: 0 3px 4px rgb(24, 24, 24);
-            box-shadow: 0 3px 4px rgb(24, 24, 24);
+    box-shadow: 0 3px 4px rgb(24, 24, 24);
 }
 
 footer {
     -webkit-box-shadow: 0 -3px 3px rgb(24, 24, 24);
-            box-shadow: 0 -3px 3px rgb(24, 24, 24);
+    box-shadow: 0 -3px 3px rgb(24, 24, 24);
 }
 
 #nav-top,
@@ -192,7 +192,7 @@ footer i {
 #search-input {
     width: 100%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 2rem;
     font-size: 1rem;
@@ -221,13 +221,25 @@ footer i {
 
 /* Home Page */
 
+/* Hero Image small screen */
 #home-hero {
-    width: 100%;
+    background: url("../images/home-hero-sm.webp") top center / cover;
+    aspect-ratio: 16 / 9;
 }
 
 /* Medium screen sizes - 768px up*/
 @media screen and (min-width: 768px) {
     .greeting {
         font-size: 1rem;
+    }
+}
+
+/* Large screen sizes - 1024px up*/
+@media screen and (min-width: 1024px) {
+
+    /* Hero Image large screen */
+    #home-hero {
+        background: url("../images/home-hero-bg.webp") top center / cover;
+        aspect-ratio: 16 / 9;
     }
 }

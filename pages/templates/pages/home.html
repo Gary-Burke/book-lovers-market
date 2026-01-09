@@ -6,13 +6,8 @@
 
     <h1 class="my-3 text-center col">Welcome to Book Lovers Market!</h1>
 
-    <div class="col col-md-10 col-lg-8 mx-auto">
-        {% if "placeholder" in home.image.url %}
-        <img src="{% static 'images/placeholder-home.webp' %}" alt="placeholder hero image" id="home-hero">
-        {% else %}
-        <img src="{{ home.image.url }}" alt="hero image" id="home-hero">
-        {% endif %}
-    </div>
+    <!-- Hero image -->
+    <div class="col col-lg-10 mx-auto" id="home-hero"></div>
 
     <div class="col col-md-10 col-lg-8 col-xl-7 mx-auto mt-4 mb-5">
         <p>
