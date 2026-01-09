@@ -1,5 +1,4 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -8,7 +7,6 @@ class Home(models.Model):
     """
     Stores a single instance for the home page content
     """
-    image = CloudinaryField('image', default='placeholder')
     quote = models.TextField()
     author = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now=True)
