@@ -34,6 +34,13 @@
         <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     </noscript>
 
+    <!-- Font Awesome CSS CDN -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
     <!-- CSS Styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -126,10 +133,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
-    </script>
-
-    <!-- Font Awesome Kit -->
-    <script src="https://kit.fontawesome.com/3a3a47fde5.js" crossorigin="anonymous"></script>
+    </script>    
 
     {% block extras %}
     {% endblock %}
