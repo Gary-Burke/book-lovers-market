@@ -98,3 +98,36 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Add Book | ![screenshot](documentation/testing/browsers/chrome-add-book.png) | ![screenshot](documentation/testing/browsers/firefox-add-book.png) | ![screenshot](documentation/testing/browsers/edge-add-book.jpeg) | Works as expected |
 | Add Book Manual | ![screenshot](documentation/testing/browsers/chrome-add-book-manual.png) | ![screenshot](documentation/testing/browsers/firefox-add-book-manual.png) | ![screenshot](documentation/testing/browsers/edge-add-book-manual.jpeg) | Works as expected |
 | Edit Book | ![screenshot](documentation/testing/browsers/chrome-edit-book.png) | ![screenshot](documentation/testing/browsers/firefox-edit-book.png) | ![screenshot](documentation/testing/browsers/edge-edit-book.jpeg) | Works as expected |
+
+
+
+## Bugs
+
+### Fixed Bugs
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search/Gary-Burke/book-lovers-market?query=is%3Aissue%20is%3Aclosed%20label%3Abug&label=Fixed%20Bugs&color=green)](https://www.github.com/Gary-Burke/book-lovers-market/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+I've used [GitHub Issues](https://www.github.com/Gary-Burke/book-lovers-market/issues) to track and manage bugs and issues during the development stages of my project.
+
+All previously closed/fixed bugs can be tracked [here](https://www.github.com/Gary-Burke/book-lovers-market/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
+
+![screenshot](documentation/gh/bugs-closed.png)
+
+### Unfixed Bugs
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search/Gary-Burke/book-lovers-market?query=is%3Aissue%2Bis%3Aopen%2Blabel%3Abug&label=Unfixed%20Bugs&color=red)](https://www.github.com/Gary-Burke/book-lovers-market/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+Any remaining open issues can be tracked [here](https://www.github.com/Gary-Burke/book-lovers-market/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
+
+![screenshot](documentation/gh/bugs-open.png)
+
+### Known Issues
+
+| Issue | Screenshot |
+| --- | --- |
+| The project is designed to be responsive from `320px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | n/a |
+
+
+> [!IMPORTANT]  
+> There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
+
