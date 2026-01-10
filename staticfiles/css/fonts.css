@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/static/fonts/lora-regular.woff2') format('woff2');
+  src: url('/static/fonts/lora-normal.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,5 +11,5 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/static/fonts/roboto-regular.woff2') format('woff2');
+  src: url('/static/fonts/roboto-normal.woff2') format('woff2');
 }
