@@ -99,6 +99,23 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Add Book Manual | ![screenshot](documentation/testing/browsers/chrome-add-book-manual.png) | ![screenshot](documentation/testing/browsers/firefox-add-book-manual.png) | ![screenshot](documentation/testing/browsers/edge-add-book-manual.jpeg) | Works as expected |
 | Edit Book | ![screenshot](documentation/testing/browsers/chrome-edit-book.png) | ![screenshot](documentation/testing/browsers/firefox-edit-book.png) | ![screenshot](documentation/testing/browsers/edge-edit-book.jpeg) | Works as expected |
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
+
+| Page | Mobile | Desktop |
+| --- | --- | --- |
+| Register | ![screenshot](documentation/testing/lighthouse/mobile-register.png) | ![screenshot](documentation/testing/lighthouse/desktop-register.png) |
+| Login | ![screenshot](documentation/testing/lighthouse/mobile-login.png) | ![screenshot](documentation/testing/lighthouse/desktop-login.png) |
+| Home | ![screenshot](documentation/testing/lighthouse/mobile-home.png) | ![screenshot](documentation/testing/lighthouse/desktop-home.png) |
+| About | ![screenshot](documentation/testing/lighthouse/mobile-about.png) | ![screenshot](documentation/testing/lighthouse/desktop-about.png) |
+| Library | ![screenshot](documentation/testing/lighthouse/mobile-library.png) | ![screenshot](documentation/testing/lighthouse/desktop-library.png) |
+| Add Book | ![screenshot](documentation/testing/lighthouse/mobile-add-book.png) | ![screenshot](documentation/testing/lighthouse/desktop-add-book.png) |
+| Add Book Manual | ![screenshot](documentation/testing/lighthouse/mobile-add-book-manual.png) | ![screenshot](documentation/testing/lighthouse/desktop-add-book-manual.png) |
+| Edit Book | ![screenshot](documentation/testing/lighthouse/mobile-edit-book.png) | ![screenshot](documentation/testing/lighthouse/desktop-edit-book.png) |
+| Sales | ![screenshot](documentation/testing/lighthouse/mobile-sales.png) | ![screenshot](documentation/testing/lighthouse/desktop-sales.png) |
+| 404 | ![screenshot](documentation/testing/lighthouse/mobile-404.png) | ![screenshot](documentation/testing/lighthouse/desktop-404.png) |
+
 ## User Story Testing
 
 | Target | Expectation | Outcome | Screenshot |
