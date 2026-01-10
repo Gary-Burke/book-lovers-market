@@ -1,0 +1,242 @@
+/* CSS Variables */
+:root {
+    --primary-font: "Roboto", sans-serif;
+    --heading-font: "Lora", serif;
+    --primary-color: #05668D;
+    --secondary-color: #A5BE00;
+    --alt-color: #EBF2FA;
+}
+
+/* General Styles */
+
+body {
+    font-family: var(--primary-font);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.no-display {
+    display: none;
+}
+
+/* prevent navbar overlap due to fixed position */
+.section {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+/* Nav and Footer */
+
+#nav-top,
+footer {
+    background-color: var(--primary-color);
+}
+
+#nav-top {
+    -webkit-box-shadow: 0 3px 4px rgb(24, 24, 24);
+    box-shadow: 0 3px 4px rgb(24, 24, 24);
+}
+
+footer {
+    -webkit-box-shadow: 0 -3px 3px rgb(24, 24, 24);
+    box-shadow: 0 -3px 3px rgb(24, 24, 24);
+}
+
+#nav-top,
+footer {
+    color: var(--alt-color);
+}
+
+.logo {
+    height: 2rem;
+}
+
+.greeting {
+    font-size: 0.875rem;
+}
+
+footer i {
+    color: var(--alt-color);
+    font-size: 1.3rem;
+}
+
+/* Alert messages */
+
+.alert-success {
+    background-color: #DFF0D5;
+    color: #3C7B6A;
+    border: 1px solid #3C7B6A;
+}
+
+.alert-danger {
+    background-color: #F2DEDE;
+    color: #AA4542;
+    border: 1px solid #AA4542;
+}
+
+.alert-warning {
+    background-color: #FCF8E1;
+    color: #8C6D37;
+    border: 1px solid #8C6D37;
+}
+
+#messages {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+/* Buttons */
+
+.btn-confirm {
+    background-color: var(--secondary-color);
+    border-radius: 0.8rem;
+}
+
+.btn-confirm:hover {
+    background-color: var(--alt-color);
+    border: solid 1px var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.button-cancel {
+    background-color: grey;
+    border-radius: 0.8rem;
+    color: var(--alt-color);
+}
+
+.button-cancel:hover {
+    background-color: var(--alt-color);
+    border: solid 1px grey;
+    color: black;
+}
+
+.btn-isbn,
+.btn-manual {
+    background-color: var(--primary-color);
+    color: var(--alt-color);
+    border-radius: 0.8rem;
+    border: none;
+    padding: 3px 10px;
+    text-decoration: none;
+}
+
+.selected {
+    background-color: #65b6d6;
+    cursor: not-allowed;
+}
+
+/* Icons for edit and delete */
+
+.button-edit,
+.button-delete {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.button-edit {
+    color: var(--primary-color);
+}
+
+.button-delete {
+    color: rgb(220, 0, 0);
+}
+
+/* Edit Book Page */
+
+.edit-preview>img {
+    width: 60%;
+}
+
+/* Library & sales page*/
+
+.book ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.book-text {
+    font-size: 0.9rem;
+}
+
+.book img {
+    width: 100%;
+}
+
+#library-filter,
+#library-sort {
+    color: var(--primary-color);
+}
+
+.sales .book {
+    cursor: pointer;
+}
+
+#search-input {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background: var(--alt-color) url("../images/icon-search.296f24885e8a.png") no-repeat 5px center;
+    padding: 2px 5px 2px 32px;
+}
+
+#form-sort select,
+#form-filter select {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--alt-color);
+}
+
+/* Paginate Navigation Element */
+
+.pagination .page-link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#current-page {
+    background-color: var(--primary-color);
+    color: var(--alt-color);
+}
+
+/* Home Page */
+
+/* Hero Image small screen */
+#home-hero {
+    background: url("../images/home-hero-sm.7afc7e01efa0.webp") top center / cover;
+    aspect-ratio: 16 / 9;
+}
+
+/* Medium screen sizes - 768px up*/
+@media screen and (min-width: 768px) {
+    .greeting {
+        font-size: 1rem;
+    }
+}
+
+/* Large screen sizes - 1024px up*/
+@media screen and (min-width: 1024px) {
+
+    /* Hero Image large screen */
+    #home-hero {
+        background: url("../images/home-hero-bg.7d49b001cc9c.webp") top center / cover;
+        aspect-ratio: 16 / 9;
+    }
+}
