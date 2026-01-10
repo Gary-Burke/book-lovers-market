@@ -99,6 +99,28 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Add Book Manual | ![screenshot](documentation/testing/browsers/chrome-add-book-manual.png) | ![screenshot](documentation/testing/browsers/firefox-add-book-manual.png) | ![screenshot](documentation/testing/browsers/edge-add-book-manual.jpeg) | Works as expected |
 | Edit Book | ![screenshot](documentation/testing/browsers/chrome-edit-book.png) | ![screenshot](documentation/testing/browsers/firefox-edit-book.png) | ![screenshot](documentation/testing/browsers/edge-edit-book.jpeg) | Works as expected |
 
+## Automated Testing
+
+I have conducted a series of automated tests on my application to test all of my forms.
+
+> [!NOTE]  
+> I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+
+I have used Django's built-in unit testing framework to test the application functionality. In order to run the tests, I ran the following command in the terminal each time:
+
+- `python3 manage.py test name-of-app`
+
+Below are the results from the full coverage report on my application that I've tested:
+
+| App | Criteria | Screenshot | Notes |
+| --- | --- | --- | --- |
+| pages | Feedback Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-pages-result.png) | All defensive programming and testing was successfull |
+| library | ISBN Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
+| library | Edit Book Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
+| library | Add Book Manually Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
+
 
 
 ## Bugs
