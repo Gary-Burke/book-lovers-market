@@ -99,6 +99,31 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Add Book Manual | ![screenshot](documentation/testing/browsers/chrome-add-book-manual.png) | ![screenshot](documentation/testing/browsers/firefox-add-book-manual.png) | ![screenshot](documentation/testing/browsers/edge-add-book-manual.jpeg) | Works as expected |
 | Edit Book | ![screenshot](documentation/testing/browsers/chrome-edit-book.png) | ![screenshot](documentation/testing/browsers/firefox-edit-book.png) | ![screenshot](documentation/testing/browsers/edge-edit-book.jpeg) | Works as expected |
 
+## User Story Testing
+
+| Target | Expectation | Outcome | Screenshot |
+| --- | --- | --- | --- |
+| As a user | I would like to see my logged in status clearly displayed | so that my user experience on the site can be smooth. | ![screenshot](documentation/features/status.png) |
+| As the owner | I would like it to be mandatory for users to use a username and e-mail for sign up | so that these details are never missing from sales listings. | ![screenshot](documentation/features/signup-credentials.png) |
+| As a user | I would like to be able to request to reset my password if I forget it| so that I can still access my account. | ![screenshot](documentation/features/forgot-password.png) |
+| As a user | I would like to see a clean and clear home page | so that I can know what to expect from this website. | ![screenshot](documentation/features/home.png) |
+| As a user | I would like to have a consistent navigation bar at the top | so that I can easily navigate to the pages I want to visit. | ![screenshot](documentation/features/navbar.png) |
+| As a user | I would like to see social media links in the footer | so that I can get in touch and stay up to date with the business and its products. | ![screenshot](documentation/features/footer.png) |
+| As a user | I would like to see an about page | so that I can read about the busniess concept in more detail and provide feedback. | ![screenshot](documentation/features/about.png) |
+| As a user | I would like to be able to add the books that I own to my library with an ISBN | so that I can have a digital overview of all my books. | ![screenshot](documentation/features/library-isbn.png) |
+| As a user | I would like to be able to add the books that I own to my library manually | so that I can still have them even when the ISBN is not found. | ![screenshot](documentation/features/library-manual.png) |
+| As a user | I would like to view my library | so that I can view all of my books. | ![screenshot](documentation/features/library.png) |
+| As a user | I would like to filter my books | so that I can see books based on their status. | ![screenshot](documentation/features/library-filter.png) |
+| As a user | I would like to edit the books in my library | so that I can maintain my library according to my preferences. | ![screenshot](documentation/features/library-edit.png) |
+| As a user | I would like to delete the books in my library | so that I can maintain my library according to my preferences. | ![screenshot](documentation/features/library-delete.png) |
+| As a user | I would like to be able to choose how my books are sorted | so that I can arrange them according to my preferences. | ![screenshot](documentation/features/library-sort.png) |
+| As a user | I would like to view all books listed for sale | so that I can contact the owner to buy them. | ![screenshot](documentation/features/sales.png) |
+| As the owner | I would like to be able to read the feedback submitted by users | so that I can adapt and improve my business as needed. | ![screenshot](documentation/features/admin-feedback.png) |
+| As the owner | I would like to be able to edit and update the content on the Home Page | so that I can display a new book/reading quote every month. | ![screenshot](documentation/features/admin-home.png) |
+| As a user | I would like to filter the books on the sales page based on search criteria | so that I can find books based on what I need. | ![screenshot](documentation/features/sales-search.png) |
+| As a user | I would like to filter the books in my library based on search criteria | so that I can find my books based on what I need. | ![screenshot](documentation/features/library-search.png) |
+| As a user | I would like to be able to click on a book for sale and see further details | so that I can find the contact information and additional information on the book. | ![screenshot](documentation/features/book-detail.png) |
+
 ## Automated Testing
 
 I have conducted a series of automated tests on my application to test all of my forms.
