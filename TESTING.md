@@ -114,7 +114,6 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Add Book Manual | ![screenshot](documentation/testing/lighthouse/mobile-add-book-manual.png) | ![screenshot](documentation/testing/lighthouse/desktop-add-book-manual.png) |
 | Edit Book | ![screenshot](documentation/testing/lighthouse/mobile-edit-book.png) | ![screenshot](documentation/testing/lighthouse/desktop-edit-book.png) |
 | Sales | ![screenshot](documentation/testing/lighthouse/mobile-sales.png) | ![screenshot](documentation/testing/lighthouse/desktop-sales.png) |
-| 404 | ![screenshot](documentation/testing/lighthouse/mobile-404.png) | ![screenshot](documentation/testing/lighthouse/desktop-404.png) |
 
 ## User Story Testing
 
