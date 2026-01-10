@@ -42,7 +42,10 @@
     </noscript>
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"></noscript>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
