@@ -9,7 +9,8 @@
 <div class="container add-books">
     <h3 class="my-3">Add Books to your Library</h3>
     <a href="#" data-url="{% url 'add_book' %}" class="btn-isbn {% if active == 'isbn' %}selected{% endif %}">ISBN</a>
-    <a href="#" data-url="{% url 'add_book_manual' %}" class="ms-2 btn-manual {% if active == 'manual' %}selected{% endif %}">Manually</a>
+    <a href="#" data-url="{% url 'add_book_manual' %}"
+        class="ms-2 btn-manual {% if active == 'manual' %}selected{% endif %}">Manually</a>
 
     <!-- Add book form ISBN -->
     <div class="row isbn mt-2">
@@ -48,5 +49,10 @@
 {% endblock %}
 
 {% block extras %}
-<script src="{% static 'js/add.js' %}"></script>
+<!-- jQuery CDN link -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    defer crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/add.js' %}" defer></script>
 {% endblock %}

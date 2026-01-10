@@ -12,7 +12,7 @@
         <div class="col col-sm-4 d-flex align-items-center">
             <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
             <form method="get" class="ms-1" id="form-sort">
-                <label for="sort-selection" class="no-display">Sort:</label> 
+                <label for="sort-selection" class="no-display">Sort:</label>
                 <select name="sort" id="sort-selection" onchange="this.form.submit()">
                     <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author a-z</option>
                     <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author z-a</option>
@@ -86,7 +86,8 @@
 
                 {% for page_num in page_obj.paginator.page_range %}
                 <li class="page-item">
-                    <a href="?page={{ page_num }}" class="page-link" id="{% if page_num == page_obj.number %}current-page{% endif %}">{{ page_num }}</a>
+                    <a href="?page={{ page_num }}" class="page-link"
+                        id="{% if page_num == page_obj.number %}current-page{% endif %}">{{ page_num }}</a>
                 </li>
                 {% endfor %}
 
@@ -123,5 +124,10 @@
 {% endblock content %}
 
 {% block extras %}
-<script src="{% static 'js/sales.js' %}"></script>
+<!-- jQuery CDN link -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    defer crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/sales.js' %}" defer></script>
 {% endblock %}

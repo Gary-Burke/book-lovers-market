@@ -13,7 +13,8 @@
 
         <!-- Add Books button -->
         <div class="col-4 px-2">
-            <a class="btn btn-confirm px-2 px-sm-3" href="{% url 'add_book' %}"><i class="fa-solid fa-plus"></i> Books</a>
+            <a class="btn btn-confirm px-2 px-sm-3" href="{% url 'add_book' %}"><i class="fa-solid fa-plus"></i>
+                Books</a>
         </div>
 
         <!-- Search field -->
@@ -37,9 +38,9 @@
     <div class="d-flex align-items-center my-3">
 
         <!-- Sort -->
-        <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>        
-        <form method="get" class="ms-1" id="form-sort">       
-            <label for="sort-selection" class="no-display">Sort:</label>     
+        <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
+        <form method="get" class="ms-1" id="form-sort">
+            <label for="sort-selection" class="no-display">Sort:</label>
             <select name="sort" id="sort-selection" onchange="this.form.submit()">
                 <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author a-z</option>
                 <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author z-a</option>
@@ -61,7 +62,7 @@
         <!-- Filter -->
         <i class="fa-solid fa-filter ms-3" id="library-filter"></i>
         <form method="get" class="ms-1" id="form-filter">
-            <label for="filter-status" class="no-display">Filter by status:</label> 
+            <label for="filter-status" class="no-display">Filter by status:</label>
             <select name="status" id="filter-status" onchange="this.form.submit()">
                 <option value="">All books</option>
                 {% for value, label in STATUS %}
@@ -178,5 +179,10 @@
 {% endblock %}
 
 {% block extras %}
-<script src="{% static 'js/library.js' %}"></script>
+<!-- jQuery CDN link -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    defer crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/library.js' %}" defer></script>
 {% endblock %}
