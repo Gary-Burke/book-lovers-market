@@ -140,7 +140,16 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | As a user | I would like to filter the books in my library based on search criteria | so that I can find my books based on what I need. | ![screenshot](documentation/features/library-search.png) |
 | As a user | I would like to be able to click on a book for sale and see further details | so that I can find the contact information and additional information on the book. | ![screenshot](documentation/features/book-detail.png) |
 
-## Automated Testing
+## Defensive Programming
+
+### Manual Testing
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| Page | Expectation | Test | Result | Screenshot |
+| --- | --- | --- | --- | --- |
+
+### Automated Testing
 
 I have conducted a series of automated tests on my application to test all of my forms.
 
@@ -153,7 +162,7 @@ I have used Django's built-in unit testing framework to test the application fun
 
 - `python3 manage.py test name-of-app`
 
-Below are the results from the full coverage report on my application that I've tested:
+Below are the results of these tests:
 
 | App | Criteria | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -161,8 +170,6 @@ Below are the results from the full coverage report on my application that I've 
 | library | ISBN Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
 | library | Edit Book Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
 | library | Add Book Manually Form was tested to ensure all fields are valid and no field is empty | ![screenshot](documentation/testing/defensive/tests-library-result.png) | All defensive programming and testing was successfull |
-
-
 
 ## Bugs
 
