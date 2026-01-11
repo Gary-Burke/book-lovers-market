@@ -148,6 +148,15 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
+| Library | Only a logged in user should have access | As a logged out user I clicked on the Library nav link | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/library-nav.png) |
+| Library | Only a logged in user should have access | As a logged out user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/library-url.png) |
+| Library Add Book | Only a logged in user should be able to add a book to their library | As a logged out user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/add-book-url.png) |
+| Library Add Book Manually | Only a logged in user should be able to add a book to their library | As a logged out user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/add-book-manual-url.png) |
+| Library Edit Book | Only a logged in user should be able to edit a book in their library | As a logged out user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/add-book-url.png) |
+| Library Delete Book | Only a logged in user should be able to delete a book from their library | As a logged out user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/delete-book-url.png) |
+| Library Edit Book | A logged in user should not be able to edit a book from another user's library | As a logged in user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/edit-book-url-user.png) |
+| Library Delete Book | A logged in user should not be able to delete a book from another user's library | As a logged in user I typed in the url for the page directly | The app informs and prevents access as expected | ![screenshot](documentation//testing/defensive/delete-book-url-user.png) |
+| 404 | When a broken url is typed in the personalized 404 message should appear | I typed in a non-existent url | The app informs the user and they can safely navigate home | ![screenshot](documentation//testing/defensive/404.png) |
 
 ### Automated Testing
 
