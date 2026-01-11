@@ -6,10 +6,10 @@
 <div class="container sales">
     <h3 class="my-3">Welcome to Book Lovers Market!</h3>
 
-    <div class="row row-cols-1 row-cols-md-2 gy-2 align-items-center justify-content-between">
+    <div class="row gy-2 justify-content-between">
 
         <!-- Sort icon and dropdown menus -->
-        <div class="col col-sm-4 d-flex align-items-center">
+        <div class="col-6 col-sm-4 d-flex align-items-center">
             <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
             <form method="get" class="ms-1" id="form-sort">
                 <label for="sort-selection" class="no-display">Sort:</label>
@@ -28,9 +28,9 @@
         </div>
 
         <!-- Search field -->
-        <div class="col col-sm-8 col-lg-5 col-xl-4 mt-3 mt-sm-2 text-end">
+        <div class="col-12 col-sm-8 col-lg-6 mt-3 mt-sm-2 text-end">
             <form method="get" id="form-search">
-                <input id="search-input" name="search" type="text" placeholder="Title, author or ISBN"
+                <input id="search-input" name="search" type="text" placeholder="Search title, author or ISBN"
                     value="{{ request.GET.search }}" autocomplete="off">
 
                 {% if request.GET.sort %}
@@ -41,30 +41,24 @@
     </div>
 
     <!-- Books -->
-    <div class="row g-3 mt-3">
+    <div class="row mt-3 gy-4">
         {% for book in sales_list %}
-        <div class="book col-12 col-md-6 col-lg-4 col-xl-3" data-url="{% url 'book_details' book.id %}">
-            <div class="row">
-                <div class="col-5">
-                    {% if book.cover_url %}
-                    <img src="{{ book.cover_url }}" alt="{{ book.title }}" fetchpriority="high" width="110"
-                        height="173">
-                    {% else %}
-                    <img src="{% static 'images/no-cover.png' %}" alt="No cover" width="110" height="173">
-                    {% endif %}
-                </div>
-                <div class="col-7 ps-0">
-                    <ul>
-                        <li><strong>{{ book.title }}</strong></li>
-                        <li>{{ book.author }}</li>
-
-                        {% if book.price %}
-                        <li>{{ book.price }}€</li>
-                        {% endif%}
-
-                    </ul>
-                </div>
-            </div>
+        <!-- Book div -->
+        <div class="book col-12 col-md-6 col-lg-4 col-xl-3 d-flex" data-url="{% url 'book_details' book.id %}">
+            <!-- Book Cover -->
+            {% if book.cover_url %}
+            <img src="{{ book.cover_url }}" alt="{{ book.title }}" fetchpriority="high">
+            {% else %}
+            <img src="{% static 'images/no-cover.png' %}" alt="No cover">
+            {% endif %}
+            <!-- Book Text -->
+            <ul class="ms-2">
+                <li><strong>{{ book.title }}</strong></li>
+                <li>{{ book.author }}</li>
+                {% if book.price %}
+                <li>{{ book.price }}€</li>
+                {% endif%}
+            </ul>
         </div>
 
         {% empty %}

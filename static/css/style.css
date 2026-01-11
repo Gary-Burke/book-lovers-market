@@ -162,7 +162,8 @@ footer i {
 /* Library & sales page*/
 
 .book img {
-    width: 100%;
+    width: 115px;
+    height: 170px;
 }
 
 .book ul {
