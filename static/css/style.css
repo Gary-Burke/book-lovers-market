@@ -173,10 +173,6 @@ footer i {
     font-size: 0.9rem;
 }
 
-.book img {
-    width: 100%;
-}
-
 #library-filter,
 #library-sort {
     color: var(--primary-color);
