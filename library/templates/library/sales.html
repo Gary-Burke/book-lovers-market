@@ -6,10 +6,10 @@
 <div class="container sales">
     <h3 class="my-3">Welcome to Book Lovers Market!</h3>
 
-    <div class="row gy-2 justify-content-between">
+    <div class="row justify-content-between align-items-center">
 
         <!-- Sort icon and dropdown menus -->
-        <div class="col-6 col-sm-4 d-flex align-items-center">
+        <div class="col-6 col-sm-4 d-flex">
             <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
             <form method="get" class="ms-1" id="form-sort">
                 <label for="sort-selection" class="no-display">Sort:</label>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Search field -->
-        <div class="col-12 col-sm-8 col-lg-6 mt-3 mt-sm-2 text-end">
+        <div class="col-12 col-sm-8 col-lg-6 mt-3 mt-sm-0 text-end">
             <form method="get" id="form-search">
                 <input id="search-input" name="search" type="text" placeholder="Search title, author or ISBN"
                     value="{{ request.GET.search }}" autocomplete="off">
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Books -->
-    <div class="row mt-3 gy-4">
+    <div class="row mt-2 gy-4">
         {% for book in sales_list %}
         <!-- Book div -->
         <div class="book col-12 col-md-6 col-lg-4 col-xl-3 d-flex" data-url="{% url 'book_details' book.id %}">
