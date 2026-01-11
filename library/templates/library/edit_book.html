@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and book.user == user %}
 
 <div class="container">
     <div class="row mt-3">
@@ -24,6 +24,18 @@
             {% else %}
             <img src="{% static 'images/no-cover.png' %}" alt="No cover" width="300" height="400" class="img-fluid">
             {% endif %}
+        </div>
+    </div>
+</div>
+
+{% elif user.is_authenticated %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-5 offset-md-2">
+            <h2>Not Allowed!</h2>
+            <p class="lead">You can only edit the books in your own <a href="{% url 'library' %}">Library</a>
+            </p>
         </div>
     </div>
 </div>
