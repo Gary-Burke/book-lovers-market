@@ -45,17 +45,17 @@
         {% for book in sales_list %}
         <div class="book col-12 col-md-6 col-lg-4 col-xl-3" data-url="{% url 'book_details' book.id %}">
             <div class="row">
-                <div class="col-4">
+                <div class="col-5">
                     {% if book.cover_url %}
-                    <img src="{{ book.cover_url }}" alt="{{ book.title }}" width="300" height="400" class="img-fluid" fetchpriority="high">
+                    <img src="{{ book.cover_url }}" alt="{{ book.title }}" fetchpriority="high">
                     {% else %}
-                    <img src="{% static 'images/no-cover.png' %}" alt="No cover" width="300" height="400" class="img-fluid">
+                    <img src="{% static 'images/no-cover.png' %}" alt="No cover">
                     {% endif %}
                 </div>
-                <div class="col-8 ps-0">
-                    <ul class="book-text">
-                        <li>{{ book.title }}</li>
-                        <li> - {{ book.author }}</li>
+                <div class="col-7 ps-0">
+                    <ul>
+                        <li><strong>{{ book.title }}</strong></li>
+                        <li>{{ book.author }}</li>
 
                         {% if book.price %}
                         <li>{{ book.price }}€</li>

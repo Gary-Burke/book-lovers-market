@@ -39,6 +39,8 @@ h4 {
 #nav-top,
 footer {
     background-color: var(--primary-color);
+    color: var(--alt-color);
+    font-size: 1rem;
 }
 
 #nav-top {
@@ -49,11 +51,6 @@ footer {
 footer {
     -webkit-box-shadow: 0 -3px 3px rgb(24, 24, 24);
     box-shadow: 0 -3px 3px rgb(24, 24, 24);
-}
-
-#nav-top,
-footer {
-    color: var(--alt-color);
 }
 
 .logo {
@@ -164,14 +161,14 @@ footer i {
 
 /* Library & sales page*/
 
+.book img {
+    width: 100%;
+}
+
 .book ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
-}
-
-.book-text {
-    font-size: 0.9rem;
 }
 
 #library-filter,
