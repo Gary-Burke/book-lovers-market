@@ -89,9 +89,9 @@
             <div class="row">
                 <div class="col-5">
                     {% if book.cover_url %}
-                    <img src="{{ book.cover_url }}" alt="{{ book.title }}" fetchpriority="high" width="110" height="173">
+                    <img src="{{ book.cover_url }}" alt="{{ book.title }}" fetchpriority="high">
                     {% else %}
-                    <img src="{% static 'images/no-cover.png' %}" alt="No cover" width="110" height="173">
+                    <img src="{% static 'images/no-cover.png' %}" alt="No cover">
                     {% endif %}
                 </div>
                 <div class="col-7 ps-0">
