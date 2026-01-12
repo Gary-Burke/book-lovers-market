@@ -1,30 +1,48 @@
-/* jshint esversion: 11, jquery: true */
+/* jshint esversion: 11 */
 
-$(document).ready(function () {
-    const detailModal = new bootstrap.Modal($("#detailModal"));
-    let timer;
-    const delay = 500;
+// Global Variables
+let timer;
+const delay = 500;
+let detailModal;
 
-    /**
-     * Loads Bootstrap modal with book details when clicked
-     */
-    $(".book").on("click", function () {
-        const url = $(this).data("url");
+// Wait for the DOM to load before executing functions
+document.addEventListener("DOMContentLoaded", () => {
 
-        $("#detailModalBody").load(url, function () {
-            detailModal.show();
-        });
-    });
+    detailModal = new bootstrap.Modal(document.getElementById("detailModal"));
+
+    let books = document.querySelectorAll(".book");
+
+    for (let book of books) {
+        book.addEventListener("click", e => getURL(e));
+    }
 
     /**
      * Timer function to auto submit search input after keyboard inactivity
      */
-    $("#search-input").on("input", function () {
-        clearTimeout(timer);
+    document.getElementById("search-input").addEventListener("input", () => {
 
+        clearTimeout(timer);
         timer = setTimeout(() => {
             document.getElementById("form-search").requestSubmit();
         }, delay);
     });
-
 });
+
+/**
+     * Loads Bootstrap modal with book details when clicked via partial template
+     */
+async function getURL(e) {
+    try {
+        const url = e.currentTarget.getAttribute("data-url");
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Server Status: ${response.status}`)
+        }
+
+        document.getElementById("detailModalBody").innerHTML = await response.text();
+        detailModal.show();
+    } catch (err) {
+        console.error("Failed to load book details:", err);
+    }
+}
