@@ -193,7 +193,7 @@ footer i {
     border: 2px solid #ccc;
     border-radius: 2rem;
     font-size: 1rem;
-    background: var(--alt-color) url("../images/icon-search.png") no-repeat 5px center;
+    background: var(--alt-color) url("../images/icon-search.296f24885e8a.png") no-repeat 5px center;
     padding: 2px 5px 2px 32px;
 }
 
@@ -220,7 +220,7 @@ footer i {
 
 /* Hero Image small screen */
 #home-hero {
-    background: url("../images/home-hero-sm.webp") top center / cover;
+    background: url("../images/home-hero-sm.7afc7e01efa0.webp") top center / cover;
     aspect-ratio: 16 / 9;
 }
 
@@ -236,7 +236,7 @@ footer i {
 
     /* Hero Image large screen */
     #home-hero {
-        background: url("../images/home-hero-bg.webp") top center / cover;
+        background: url("../images/home-hero-bg.7d49b001cc9c.webp") top center / cover;
         aspect-ratio: 16 / 9;
     }
 }
