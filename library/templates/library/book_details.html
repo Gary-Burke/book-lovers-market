@@ -2,10 +2,10 @@
 {% load static %}
 
 <div class="container book">
-    <div class="row">
+    <div class="row align-items-start">
 
         <!-- Book Details -->
-        <div class="col-12 col-md-7 order-md-5">
+        <div class="col-12 col-md-8 order-md-5 ">
             <ul>
                 <li>Title: {{ book.title }}</li>
                 <li>Author: {{ book.author }}</li>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Book Cover -->
-        <div class="col-8 col-md-5 order-md-1 mt-2 mt-md-0">
+        <div class="col-8 col-md-4 order-md-1 mt-2 mt-md-0 text-start text-md-center sales-preview">
             {% if book.cover_url %}
             <img src="{{ book.cover_url }}" alt="{{ book.title }}">
             {% else %}

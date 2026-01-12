@@ -166,6 +166,11 @@ footer i {
     height: 170px;
 }
 
+.sales-preview img {
+    width: 135px;
+    height: 200px;
+}
+
 .book ul {
     list-style-type: none;
     padding: 0px;
