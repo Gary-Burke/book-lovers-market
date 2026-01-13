@@ -20,9 +20,9 @@
 
         <div class="col-12 col-md-4 col-lg-3 mt-3 edit-preview text-center">
             {% if book.cover_url %}
-            <img src="{{ book.cover_url }}" alt="{{ book.title }}" width="300" height="400" class="img-fluid">
+            <img src="{{ book.cover_url }}" alt="{{ book.title }}">
             {% else %}
-            <img src="{% static 'images/no-cover.png' %}" alt="No cover" width="300" height="400" class="img-fluid">
+            <img src="{% static 'images/no-cover.png' %}" alt="No cover">
             {% endif %}
         </div>
     </div>
