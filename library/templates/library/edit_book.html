@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row mt-3">
         <h3>Edit Book Details</h3>
-        <div class="col-md-5">
+        <div class="col-12 col-md-8 col-lg-7 col-xxl-5">
             <form method="post">
                 {% csrf_token %}
                 {{ edit_book_form | crispy }}
@@ -18,7 +18,7 @@
             </form>
         </div>
 
-        <div class="col-10 col-md-6 col-lg-4 mt-3 edit-preview text-center">
+        <div class="col-12 col-md-4 col-lg-3 mt-3 edit-preview text-center">
             {% if book.cover_url %}
             <img src="{{ book.cover_url }}" alt="{{ book.title }}" width="300" height="400" class="img-fluid">
             {% else %}

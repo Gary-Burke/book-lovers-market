@@ -156,7 +156,8 @@ footer i {
 /* Edit Book Page */
 
 .edit-preview>img {
-    width: 60%;
+    width: 180px;
+    height: 266px;
 }
 
 /* Library & sales page*/
