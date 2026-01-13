@@ -78,7 +78,7 @@
                 {% for page_num in page_obj.paginator.page_range %}
                 <li class="page-item">
                     <a href="?page={{ page_num }}" class="page-link"
-                        id="{% if page_num == page_obj.number %}current-page{% endif %}">{{ page_num }}</a>
+                        id="{% if page_num == page_obj.number %}current-page{% else %}{{ page_num }}{% endif %}">{{ page_num }}</a>
                 </li>
                 {% endfor %}
 

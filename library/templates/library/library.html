@@ -124,7 +124,7 @@
                 {% for page_num in page_obj.paginator.page_range %}
                 <li class="page-item">
                     <a href="?page={{ page_num }}" class="page-link"
-                        id="{% if page_num == page_obj.number %}current-page{% endif %}">{{ page_num }}</a>
+                        id="{% if page_num == page_obj.number %}current-page{% else %}{{ page_num }}{% endif %}">{{ page_num }}</a>
                 </li>
                 {% endfor %}
 
@@ -171,14 +171,14 @@
             </div>
         </div>
     </div>
+</div>
+{% endblock %}
 
-    {% endblock %}
+{% block extras %}
+<!-- jQuery CDN link -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    defer crossorigin="anonymous"></script>
 
-    {% block extras %}
-    <!-- jQuery CDN link -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" defer crossorigin="anonymous"></script>
-
-    <!-- Custom JS -->
-    <script src="{% static 'js/library.js' %}" defer></script>
-    {% endblock %}
+<!-- Custom JS -->
+<script src="{% static 'js/library.js' %}" defer></script>
+{% endblock %}
