@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let books = document.querySelectorAll(".book");
 
     for (let book of books) {
-        book.addEventListener("click", e => getURL(e));
+        book.addEventListener("click", getURL);
     }
 
     /**
