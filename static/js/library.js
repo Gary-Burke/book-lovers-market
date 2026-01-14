@@ -9,7 +9,7 @@ $(document).ready(function () {
      * Shows/Hides edit and delete icons when individual cards are hovered on
      */
     $(".book").hover(function () {
-        $(this).find("a").toggleClass("hide");
+        $(this).find("#icons").toggleClass("hide");
     });
 
     /**
