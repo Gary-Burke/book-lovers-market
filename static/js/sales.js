@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("form-search").requestSubmit();
         }, delay);
     });
+
 });
 
 /**
@@ -40,6 +41,11 @@ async function getURL(e) {
 
         document.getElementById("detailModalBody").innerHTML = await response.text();
         detailModal.show();
+
+        document.getElementById("seller").addEventListener("click", function () {
+            this.classList.toggle("placeholder");
+        });
+
     } catch (err) {
         console.error("Failed to load book details:", err);
     }

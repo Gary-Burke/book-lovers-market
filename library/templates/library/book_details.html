@@ -1,7 +1,7 @@
 <!-- Used to load content from Book model to Bootstrap modal in template sales -->
 {% load static %}
 
-<div class="container book">
+<div class="container book sales-preview">
     <div class="row align-items-start">
 
         <!-- Book Details -->
@@ -17,14 +17,14 @@
                 <li>Price: n/a</li>
                 {% endif %}
 
-                <li>Contact Seller: {{ book.user.email }}</li>
+                <li class="placeholder-glow">Contact Seller: <span id="seller" class="placeholder">{{ book.user.email }}</span></li>
                 <li>Posted: {{ book.created_on }}</li>
                 <li>Comments: {{ book.comments }}</li>
             </ul>
         </div>
 
         <!-- Book Cover -->
-        <div class="col-8 col-md-4 order-md-1 mt-2 mt-md-0 text-start text-md-center sales-preview">
+        <div class="col-8 col-md-4 order-md-1 mt-2 mt-md-0 text-start text-md-center">
             {% if book.cover_url %}
             <img src="{{ book.cover_url }}" alt="{{ book.title }}">
             {% else %}

@@ -172,6 +172,12 @@ footer i {
     height: 200px;
 }
 
+.placeholder {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
 .book ul {
     list-style-type: none;
     padding: 0px;
