@@ -1,25 +1,31 @@
 <!-- Used to load content from Book model to Bootstrap modal in template sales -->
 {% load static %}
 
-<div class="container book sales-preview">
+<div class="book sales-preview">
     <div class="row align-items-start">
 
         <!-- Book Details -->
         <div class="col-12 col-md-8 order-md-5 ">
             <ul>
-                <li>Title: {{ book.title }}</li>
-                <li>Author: {{ book.author }}</li>
-                <li>ISBN: {{ book.isbn }}</li>
+                <li><strong>Title:</strong> {{ book.title }}</li>
+                <li><strong>Author:</strong> {{ book.author }}</li>
+                <li><strong>ISBN:</strong> {{ book.isbn }}</li>
 
                 {% if book.price %}
-                <li>Price: {{ book.price }} €</li>
+                <li><strong>Price:</strong> {{ book.price }} €</li>
                 {% else%}
-                <li>Price: n/a</li>
+                <li><strong>Price:</strong> n/a</li>
                 {% endif %}
+                <li><strong>Posted:</strong> {{ book.created_on }}</li>
 
-                <li class="placeholder-glow">Contact Seller: <span id="seller" class="placeholder">{{ book.user.email }}</span></li>
-                <li>Posted: {{ book.created_on }}</li>
-                <li>Comments: {{ book.comments }}</li>
+                {% if book.comments %}
+                <li><strong>Comments:</strong> {{ book.comments }}</li>
+                {% else %}
+                <li><strong>Comments:</strong> None</li>
+                {% endif%}
+
+                <button id="seller" class="btn btn-confirm my-1">Contact Seller</button>
+                <li class="hide">{{ book.user.email }}</li>
             </ul>
         </div>
 

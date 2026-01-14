@@ -43,7 +43,7 @@ async function getURL(e) {
         detailModal.show();
 
         document.getElementById("seller").addEventListener("click", function () {
-            this.classList.toggle("placeholder");
+            this.nextElementSibling.classList.toggle("hide");
         });
 
     } catch (err) {

@@ -168,14 +168,8 @@ footer i {
 }
 
 .sales-preview img {
-    width: 135px;
-    height: 200px;
-}
-
-.placeholder {
-    cursor: pointer;
-    background-color: var(--secondary-color);
-    color: var(--secondary-color);
+    width: 140px;
+    height: 207px;
 }
 
 .book ul {
