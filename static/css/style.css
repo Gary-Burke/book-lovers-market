@@ -138,6 +138,15 @@ footer i {
 
 /* Icons for edit and delete */
 
+.library-icons {
+    display: none;
+}
+
+.library .book:hover .library-icons {
+    display: block;
+}
+
+
 .button-edit,
 .button-delete {
     padding: 0px;

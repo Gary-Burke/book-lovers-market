@@ -6,13 +6,6 @@ $(document).ready(function () {
     const delay = 500;
 
     /**
-     * Shows/Hides edit and delete icons when individual cards are hovered on
-     */
-    $(".book").hover(function () {
-        $(this).find("#icons").toggleClass("hide");
-    });
-
-    /**
      * When clicked, gets book ID from delete button attribute
      * Builds dynamic href/URL for selected book
      * Triggers bootstrap delete modal confirmation before deleting book
