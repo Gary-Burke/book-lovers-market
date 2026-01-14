@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.db.models import Q
+from django.http import Http404
 from .forms import ISBNForm, EditBookForm, ManualBookForm
 from .models import Book
 
@@ -360,3 +361,10 @@ class BookDetailView (DetailView):
     model = Book
     template_name = "partials/book_details.html"
     context_object_name = "book"
+
+    # Code from chatGPT to restrict access for users to the partial template
+    # by typing the url directly
+    def dispatch(self, request, *args, **kwargs):
+        if request.headers.get("X-Requested-With") != "XMLHttpRequest":
+            raise Http404()
+        return super().dispatch(request, *args, **kwargs)

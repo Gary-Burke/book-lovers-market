@@ -33,7 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
 async function getURL(e) {
     try {
         const url = e.currentTarget.getAttribute("data-url");
-        const response = await fetch(url);
+        
+        const response = await fetch(url, {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest" // Code from chatGPT to restrict access for users to the partial template by typing the url directly
+            }
+        });
 
         if (!response.ok) {
             throw new Error(`Server Status: ${response.status}`);
