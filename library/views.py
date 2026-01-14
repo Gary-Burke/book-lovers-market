@@ -355,8 +355,8 @@ class BookDetailView (DetailView):
 
     **Template:**
 
-    :template:`library/book_details.html`
+    :template:`partials/book_details.html`
     """
     model = Book
-    template_name = "library/book_details.html"
+    template_name = "partials/book_details.html"
     context_object_name = "book"
