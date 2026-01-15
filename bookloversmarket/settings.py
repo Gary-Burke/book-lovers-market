@@ -41,6 +41,10 @@ DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = ['.herokuapp.com', '.127.0.0.1', ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 # Application definition
 
@@ -145,6 +149,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Internationalization
