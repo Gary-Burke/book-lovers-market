@@ -21,7 +21,7 @@
         <div class="col-12 col-sm-8 col-lg-6 mt-3 mt-sm-2 text-end">
             <form method="get" id="form-search">
                 <input id="search-input" name="search" type="text" placeholder="Search title, author or ISBN"
-                    value="{{ request.GET.search }}" autocomplete="off">
+                    value="{{ request.GET.search }}" autocomplete="off" aria-label="Search for books by title, author or ISBN">
 
                 {% if request.GET.status %}
                 <input type="hidden" name="status" value="{{ request.GET.status }}">
@@ -39,9 +39,8 @@
 
         <!-- Sort -->
         <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
-        <form method="get" class="ms-1" id="form-sort">
-            <label for="sort-selection" class="no-display">Sort:</label>
-            <select name="sort" id="sort-selection" onchange="this.form.submit()">
+        <form method="get" class="ms-1" id="form-sort">            
+            <select name="sort" onchange="this.form.submit()" aria-label="Sort books by">
                 <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author a-z</option>
                 <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author z-a</option>
                 <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title a-z</option>
@@ -61,9 +60,8 @@
 
         <!-- Filter -->
         <i class="fa-solid fa-filter ms-3" id="library-filter"></i>
-        <form method="get" class="ms-1" id="form-filter">
-            <label for="filter-status" class="no-display">Filter by status:</label>
-            <select name="status" id="filter-status" onchange="this.form.submit()">
+        <form method="get" class="ms-1" id="form-filter">            
+            <select name="status" onchange="this.form.submit()" aria-label="Filter books by">
                 <option value="">All books</option>
                 {% for value, label in STATUS %}
                 <option value="{{ value }}" {% if request.GET.status == value|stringformat:"s" %}selected{% endif %}>
