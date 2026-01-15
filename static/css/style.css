@@ -121,8 +121,7 @@ footer i {
     color: black;
 }
 
-.btn-isbn,
-.btn-manual {
+.btn-form {
     background-color: var(--primary-color);
     color: var(--alt-color);
     border-radius: 0.8rem;

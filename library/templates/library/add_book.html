@@ -8,11 +8,11 @@
 
 <div class="container add-books">
     <h3 class="my-3">Add Books to your Library</h3>
-    <a href="#" data-url="{% url 'add_book' %}" class="btn-isbn {% if active == 'isbn' %}selected{% endif %}">ISBN</a>
+    <a href="#" data-url="{% url 'add_book' %}" class="btn-form {% if active == 'isbn' %}selected{% endif %}">ISBN</a>
     <a href="#" data-url="{% url 'add_book_manual' %}"
-        class="ms-2 btn-manual {% if active == 'manual' %}selected{% endif %}">Manually</a>
+        class="ms-2 btn-form {% if active == 'manual' %}selected{% endif %}">Manually</a>
 
-    <!-- Add book form ISBN -->
+    <!-- Add book form -->
     <div class="row isbn mt-2">
         <div class="col-md-4 mt-3">
 
