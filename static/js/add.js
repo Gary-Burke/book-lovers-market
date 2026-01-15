@@ -1,10 +1,15 @@
-/* jshint esversion: 11, jquery: true */
+/* jshint esversion: 11 */
 
-$(document).ready(function () {
-    $(".add-books").children("a").on("click", function () {
-        var url = $(this).attr("data-url");
-        if (!$(this).hasClass("selected")) {
-            $(this).attr("href", url);
-        }
+// Wait for the DOM to load before executing functions
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".add-books > a").forEach(a => {
+        a.addEventListener("click", function (e) {
+            var url = this.getAttribute("data-url");
+
+            if (!this.classList.contains("selected")) {
+                this.setAttribute("href", url);
+            }
+        });
     });
+
 });
