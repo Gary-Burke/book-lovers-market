@@ -8,12 +8,11 @@
 
     <div class="row justify-content-between align-items-center">
 
-        <!-- Sort icon and dropdown menus -->
-        <div class="col-6 col-sm-4 d-flex">
+        <!-- Sort -->
+        <div class="col-6 col-sm-4 d-flex align-items-center">
             <i class="fa-solid fa-arrow-down-short-wide " id="library-sort"></i>
-            <form method="get" class="ms-1" id="form-sort">
-                <label for="sort-selection" class="no-display">Sort:</label>
-                <select name="sort" id="sort-selection" onchange="this.form.submit()">
+            <form method="get" class="ms-1" id="form-sort">                
+                <select name="sort" onchange="this.form.submit()" aria-label="Sort books by">
                     <option value="author" {% if current_sort == "author" %}selected{% endif %}>Author a-z</option>
                     <option value="-author" {% if current_sort == "-author" %}selected{% endif %}>Author z-a</option>
                     <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title a-z</option>
@@ -31,7 +30,7 @@
         <div class="col-12 col-sm-8 col-lg-6 mt-3 mt-sm-0 text-end">
             <form method="get" id="form-search">
                 <input id="search-input" name="search" type="text" placeholder="Search title, author or ISBN"
-                    value="{{ request.GET.search }}" autocomplete="off">
+                    value="{{ request.GET.search }}" autocomplete="off" aria-label="Search for books by title, author or ISBN">
 
                 {% if request.GET.sort %}
                 <input type="hidden" name="sort" value="{{ request.GET.sort }}">
