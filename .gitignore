@@ -3,4 +3,5 @@ env.py
 __pycache__/
 *.pyc
 library/fixtures/
+pages/fixtures/
 db.sqlite3
