@@ -24,13 +24,9 @@ h4 {
     visibility: hidden;
 }
 
-.no-display {
-    display: none;
-}
-
 /* prevent navbar overlap due to fixed position */
 .section {
-    padding-top: 4rem;    
+    padding-top: 4rem;
 }
 
 /* Nav and Footer */
