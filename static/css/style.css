@@ -91,6 +91,13 @@ footer i {
     text-align: center;
 }
 
+/* Home Page - Hero Image small screens default */
+#home-hero {
+    background: url("../images/home-hero-sm.webp") top center / cover;
+    aspect-ratio: 16 / 9;
+    min-height: 120px;
+}
+
 /* Buttons */
 
 .btn-confirm {
@@ -220,27 +227,23 @@ footer i {
     color: var(--alt-color);
 }
 
-/* Home Page */
-
-/* Hero Image small screen */
-#home-hero {
-    background: url("../images/home-hero-sm.webp") top center / cover;
-    aspect-ratio: 16 / 9;
-}
+/* Media Queries*/
 
 /* Medium screen sizes - 768px up*/
 @media screen and (min-width: 768px) {
     .greeting {
         font-size: 1rem;
     }
+
+    #home-hero {
+        min-height: 390px;
+    }
 }
 
 /* Large screen sizes - 1024px up*/
 @media screen and (min-width: 1024px) {
 
-    /* Hero Image large screen */
     #home-hero {
         background: url("../images/home-hero-bg.webp") top center / cover;
-        aspect-ratio: 16 / 9;
     }
 }
