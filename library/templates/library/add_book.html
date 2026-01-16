@@ -22,7 +22,7 @@
             <h4>Add Book details manually</h4>
             {% endif %}
 
-            <form method="post">
+            <form class="mb-4" method="post">
                 {% csrf_token %}
                 {{ add_form | crispy }}
                 {{ add_form_manual | crispy }}
