@@ -11,6 +11,7 @@
 
 body {
     font-family: var(--primary-font);
+    padding-top: 4rem; /* prevent navbar overlap due to fixed position - better Lighthouse score */
 }
 
 h1,
@@ -22,11 +23,6 @@ h4 {
 
 .hide {
     visibility: hidden;
-}
-
-/* prevent navbar overlap due to fixed position */
-.section {
-    padding-top: 4rem;
 }
 
 /* Nav and Footer */
