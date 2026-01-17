@@ -37,7 +37,7 @@ footer {
 #nav-top {
     -webkit-box-shadow: 0 3px 4px rgb(24, 24, 24);
     box-shadow: 0 3px 4px rgb(24, 24, 24);
-    height: 59px;
+    min-height: 42px;
 }
 
 footer {
