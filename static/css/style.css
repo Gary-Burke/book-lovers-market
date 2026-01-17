@@ -45,6 +45,10 @@ footer {
     box-shadow: 0 -3px 3px rgb(24, 24, 24);
 }
 
+footer a {
+    color: var(--alt-color);
+}
+
 .logo {
     width: 3rem;
     height: auto;
