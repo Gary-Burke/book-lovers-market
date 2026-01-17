@@ -20,19 +20,10 @@
         {% csrf_token %}
         {{ form|crispy }}
 
-        <!-- Used chatGPT to solve html validation error related aria-describedby attribute -->
-        {% if form.password.help_text %}
-        <div id="id_password_helptext" class="form-text">
-          {{ form.password.help_text|safe }}
-        </div>
-        {% endif %}
-
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <a href="{% url 'account_reset_password' %}">
-          Forgot password?
-        </a>
+        
         <button class="btn btn-confirm col-12 mt-4 mb-5" type="submit">{% trans "Sign In" %}</button>
       </form>
 
