@@ -206,6 +206,7 @@ Any remaining open issues can be tracked [here](https://www.github.com/Gary-Burk
 | --- | --- |
 | The project is designed to be responsive from `320px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | n/a |
 | There is one html validation error related to an aria-describedby attribute but this caused by the usage of Django AllAuth and Crispy Forms packages and is outside of my control. | ![screenshot](documentation/testing/validation/html-templates-login.png) |
+| The Light House Performace score is not above 80 for mobile on the Sales and Library page. This is mainly due to the fact, that the images are hot linked, i.e. loaded via a URL from an API and I can't adjust their physical sizes. Additionally I opted to keep the height the same for all these images although the original aspect ratio differs and gets penalized by Lighthouse, this looks visually better when all are aligned.  | ![screenshot](documentation/testing/lighthouse/mobile-sales.png)  ![screenshot](documentation/testing/lighthouse/mobile-library.png) |
 
 
 > [!IMPORTANT]  
