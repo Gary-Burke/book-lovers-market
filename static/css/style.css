@@ -11,6 +11,7 @@
 
 body {
     font-family: var(--primary-font);
+    font-size: 1rem;
     padding-top: 4rem; /* prevent navbar overlap due to fixed position - better Lighthouse score */
 }
 
